@@ -1,0 +1,4744 @@
+#version: 0.2
+  t
+  a
+h e
+i n
+r e
+ t he
+o n
+e r
+  s
+  w
+a t
+  o
+e n
+  c
+i t
+i s
+a n
+o r
+  b
+e s
+e d
+  f
+in g
+  p
+o u
+ a n
+a l
+ t o
+a r
+  m
+  in
+ o f
+  h
+  d
+a s
+� �
+i c
+ an d
+ t h
+l e
+o m
+i on
+l l
+en t
+  n
+  l
+  re
+s t
+v e
+  e
+l y
+ b e
+  g
+r o
+i d
+a c
+u t
+o t
+  T
+  I
+ th at
+  on
+a y
+  S
+  is
+a m
+i m
+e t
+a d
+o w
+i g
+s e
+ f or
+� �
+  A
+v er
+l d
+u r
+c t
+  C
+  u
+ s t
+  y
+  it
+  he
+i r
+at ion
+it h
+ w h
+  M
+c e
+t er
+o l
+ w e
+i l
+ w ith
+ a s
+  B
+c h
+i ll
+n d
+ w as
+er s
+  P
+ y ou
+k e
+  �
+ c on
+ d e
+  r
+i f
+he r
+at e
+ a t
+a g
+  W
+ h a
+ s e
+  H
+o re
+u l
+ p ro
+p p
+m ent
+  1
+  D
+ a re
+r i
+es t
+u s
+is t
+  R
+ c om
+an d
+a in
+o p
+  2
+ T he
+ig h
+  (
+t h
+r om
+o d
+ n e
+  F
+u m
+u n
+ e x
+� �
+a b
+re s
+  N
+ n ot
+  v
+es s
+ ha ve
+ou ld
+it y
+e m
+ o r
+or t
+ b y
+o s
+an t
+  G
+ f rom
+i ve
+ a l
+' s
+ s u
+e l
+ar t
+o c
+  L
+ s h
+ th is
+n t
+q u
+igh t
+u st
+0 0
+p e
+  le
+i es
+en d
+ c h
+ s a
+ou t
+  E
+T he
+ a b
+i e
+ac k
+al l
+ � �
+re d
+  J
+ h as
+ p l
+al ly
+ g o
+ar d
+a p
+e ar
+ h is
+i v
+om e
+g h
+o st
+as t
+ou r
+  O
+ t r
+  j
+a k
+ w or
+u d
+ the y
+ d o
+ b ut
+ sa id
+g e
+ c an
+ w ill
+r ou
+ w he
+  U
+  k
+o k
+ic h
+ a ll
+ wh o
+id e
+  "
+am e
+ in t
+t her
+an s
+ o ut
+ the ir
+f f
+i al
+e ct
+on g
+p l
+ic e
+u re
+p t
+ m ore
+ag e
+ion s
+ou s
+i ke
+on e
+ac t
+ m e
+ u p
+in e
+ a d
+ ab out
+r a
+im e
+at ed
+ we re
+ on e
+b er
+o g
+ u s
+ s o
+e p
+ h ad
+u b
+a re
+i a
+c c
+u e
+ 2 0
+  K
+ c l
+ w ould
+  im
+in d
+i z
+ a g
+ wh ich
+a ke
+ver y
+ t e
+ con t
+ u n
+ of f
+ be en
+ com p
+ S t
+s o
+a u
+ y ear
+p er
+ T h
+  en
+ig n
+e w
+i p
+ar y
+ac e
+ l ike
+o ok
+v en
+e re
+ay s
+ m an
+ in c
+r y
+ p e
+o se
+ab le
+it e
+ re s
+ p er
+or d
+as s
+ s p
+m er
+ o ther
+ I n
+ s ome
+i le
+i re
+ 20 1
+i b
+op le
+en ce
+ic al
+ ne w
+ the re
+ o ver
+ation s
+k s
+ul t
+ d is
+res s
+ al so
+ow n
+ th an
+ a r
+ou gh
+ be c
+in t
+ the m
+an ce
+a il
+p ort
+ whe n
+ a pp
+on d
+ou nt
+r u
+ you r
+re e
+ p art
+ pe ople
+ wh at
+  qu
+f ter
+or m
+ s c
+a v
+ C h
+  Y
+ j ust
+as e
+ an y
+ k n
+  3
+ it s
+ t ime
+ac h
+ he r
+ I t
+  V
+re at
+  if
+ m y
+en s
+ re c
+ic k
+ g et
+ve l
+. ”
+ int o
+ou nd
+ir st
+ t w
+ n o
+i an
+ wor k
+ct ion
+d u
+  -
+ing s
+or y
+l ic
+ pl ay
+ o ur
+it ion
+id ent
+or s
+ p re
+o b
+an g
+o ve
+in k
+ad e
+is h
+au se
+w n
+it t
+ar k
+at es
+am p
+ s he
+  ro
+, ”
+ c o
+ver s
+ p ol
+ f irst
+ a fter
+ h ow
+ c ould
+n e
+i ous
+nd er
+ a cc
+ H e
+i ld
+' t
+ 1 9
+ h im
+ p o
+a w
+on s
+ at t
+he d
+ f e
+ on ly
+ p r
+ic t
+ tw o
+h ing
+w e
+� �
+o v
+ s er
+ s pe
+f orm
+ com m
+. "
+ b l
+ be t
+ a ct
+n ing
+ de c
+ b ack
+f t
+t e
+c es
+ m ost
+o y
+o od
+  4
+ a m
+ d id
+c k
+ ag ain
+if f
+rou gh
+rou nd
+at er
+ u nder
+ w ant
+d ay
+u al
+ � �
+is e
+ � �
+r it
+ year s
+se l
+u ll
+. .
+ent s
+ d es
+ bec ause
+ n ow
+, "
+ter n
+ e ven
+ con s
+l ud
+ kn ow
+ub lic
+is s
+ in v
+ ne ed
+e c
+m an
+o ld
+ se c
+ se e
+ ad d
+ in d
+ W e
+ment s
+ e very
+c ed
+  $
+f ore
+u ch
+  5
+ur n
+ m ake
+ su pp
+ U n
+ e m
+pe ct
+ the se
+o ll
+j ect
+oc k
+ whe re
+ l ook
+ation al
+um p
+I n
+as on
+ b u
+ver n
+ie w
+ d on
+ w ay
+x t
+ r ight
+ A nd
+i ly
+ be ing
+T h
+n g
+ e v
+l es
+ m ay
+at ing
+os s
+ T r
+ d iff
+ man y
+ re l
+ re m
+ the n
+ro w
+le ct
+ de f
+as ed
+ c all
+at h
+ th ink
+i ed
+ B ut
+mer ic
+ak ing
+  [
+it ed
+ l ast
+ inc lud
+on t
+ im p
+ s ay
+ th rough
+ sh ould
+ th ose
+ow er
+if ic
+ot her
+) .
+ur ing
+ re g
+ f l
+  very
+e ll
+ p res
+ri b
+ s y
+ m uch
+ar g
+it ies
+ b r
+ sh ow
+ st ate
+t ing
+s s
+he n
+ Th is
+ be l
+v ed
+ p h
+t y
+ we ll
+at ive
+ic s
+an ge
+ W h
+  end
+ do es
+u nd
+ o wn
+ d own
+ as s
+al s
+ 2 00
+c om
+ter s
+ar ly
+ot h
+ c ount
+ m on
+ A meric
+ u se
+in ce
+w ard
+om et
+ be fore
+ l ong
+ te am
+u p
+ st art
+g r
+ N ew
+u es
+ go vern
+ re port
+  ke
+ib le
+ol og
+en er
+er t
+if e
+ m ade
+re n
+b le
+ f in
+- -
+ou n
+i x
+I t
+ s m
+ wor ld
+ su ch
+ g ame
+ers on
+ go ing
+) ,
+ su b
+00 0
+ go od
+f ul
+ he l
+is m
+e k
+ a c
+ again st
+  6
+il ity
+or k
+u ally
+ g u
+ po int
+ s ur
+ st ud
+ e ff
+t s
+y s
+g an
+  ent
+it s
+ist s
+i er
+ st ill
+ s et
+ar s
+a x
+we en
+ le ad
+ hel p
+ g r
+im es
+rou p
+ s ays
+v ing
+ c ol
+ m in
+e f
+st em
+ o b
+� �
+i o
+ wh ile
+al k
+m s
+ill ion
+ pro du
+sel f
+an k
+ s im
+ th ough
+ bet ween
+c y
+ t ake
+ s ame
+c ess
+a h
+ diff ere
+oll ow
+ n um
+ st r
+u res
+am es
+ con f
+ h igh
+ in ter
+ar ch
+e ver
+ c r
+ o p
+a ir
+ in st
+us s
+ s ign
+ R e
+at ch
+ off ic
+o ol
+l ed
+ l aw
+h ip
+ dis c
+c ent
+g g
+n er
+ pro v
+w ay
+ in s
+ re t
+re ad
+he s
+an y
+vel op
+ govern ment
+ s omet
+  ed
+l and
+ut ion
+ m ed
+W e
+ th ree
+ re f
+e e
+ t er
+ tr ans
+ f ound
+ou se
+ r un
+ a round
+ he re
+ 1 0
+ re al
+ A l
+ us ed
+o ot
+ m em
+at her
+ Y ou
+a ve
+iv es
+a z
+al e
+c on
+ ex p
+ sy stem
+al th
+et s
+ s l
+c i
+ g roup
+ce pt
+ A r
+  7
+ re ally
+v es
+ supp ort
+ c our
+en se
+ Tr ump
+ h and
+in s
+ g reat
+p h
+ w om
+ m od
+ p ublic
+ f am
+y ing
+ spe c
+ ex t
+ c ap
+ c ur
+ c ar
+er n
+ re ad
+ The y
+ f act
+p r
+is ion
+ C l
+t on
+ f ind
+ d ay
+o h
+ ex per
+ f r
+ ha pp
+ul ar
+a j
+ b oth
+ mon th
+ire ct
+ d uring
+ C om
+ d et
+in es
+ re p
+ic es
+ I s
+ S h
+ to ld
+ de velop
+ut h
+ b ig
+e red
+ f ollow
+t he
+ A s
+ is s
+ c re
+e x
+ p erson
+i vers
+m in
+ s ince
+ c ent
+ord ing
+ w ar
+ak es
+  0
+ we ek
+a red
+r ic
+ag es
+  8
+ f ew
+ic ally
+ pol it
+ bel ie
+m ed
+. [
+ L e
+ le g
+ g ener
+as h
+an c
+ ex pl
+ l ot
+b ers
+ cont in
+ent ion
+n ess
+ pro t
+g et
+i et
+ to o
+d er
+ p ut
+re nt
+ s oc
+or n
+ I f
+W h
+ re qu
+ o pp
+ an other
+  9
+ res p
+ somet hing
+iz ed
+ differe nt
+ch ool
+at t
+ c le
+ in f
+ p ass
+ l oc
+ sec ond
+at a
+ l ife
+ pl an
+v iew
+ m et
+ D e
+ inv est
+od y
+ f ar
+ f il
+ro ss
+ he ad
+ ch ild
+ ch ar
+in ess
+th ing
+i ence
+ c he
+ comm un
+ere st
+i k
+ re le
+ p ower
+ ne ver
+ th ings
+ b us
+ar l
+ p oss
+iz e
+ c amp
+ b o
+ie ld
+u c
+ de p
+ut e
+re t
+ant s
+ m ight
+ ad v
+i ent
+ as k
+ g ot
+ e ach
+ qu est
+ � �
+ v ot
+Th is
+ ar t
+ b est
+ ne xt
+ F or
+ m ark
+c l
+ F r
+ de m
+ all ow
+ c or
+ com e
+2 0
+  '
+ Th at
+ S e
+ se em
+itt le
+ fe el
+n ce
+ per cent
+ A n
+ w r
+it al
+s on
+t en
+ inc re
+ p ost
+r at
+p le
+u g
+ h ome
+  .
+ a v
+ d ist
+ op en
+er v
+ c are
+gr am
+i red
+ U S
+ cont ro
+l ess
+ p ri
+ h ard
+ch n
+ R ep
+os ed
+ res ult
+ P ro
+ se ason
+r al
+ d irect
+_ _
+ B l
+ate ly
+ h um
+ pl ace
+g y
+ num ber
+ bu ild
+ with out
+ f our
+ in form
+ includ ing
+c o
+ to p
+am a
+ m illion
+con om
+ im port
+ comp le
+  ide
+ri end
+ rec ent
+a im
+l ine
+ab ly
+ pro ble
+ t ri
+ le t
+ count ry
+w ays
+is hed
+B ut
+ st and
+ e l
+ar n
+ bet ter
+ain ed
+ g l
+e ad
+ int erest
+t t
+r ation
+ l ess
+one y
+r act
+ m ov
+l ing
+ I nd
+ part ic
+ att ack
+ l ittle
+ b ro
+a pp
+ app ro
+ be h
+ m il
+ call ed
+ did n
+ t urn
+ re st
+ d r
+ c ase
+is ed
+ain s
+od e
+ p op
+ m ove
+re m
+ eff ect
+ p ay
+aj or
+  Z
+ f ull
+in a
+ ke ep
+ le ft
+ pre v
+ an n
+ ser v
+ new s
+en cy
+ con c
+1 0
+ pro gram
+u ro
+an n
+ The re
+er ing
+at ure
+ - -
+ 1 2
+ t est
+in al
+ m ain
+le g
+ us ing
+olog y
+ w in
+ for m
+H e
+ p os
+ v al
+ Americ an
+ le vel
+ f un
+b e
+ot t
+ s chool
+ e conom
+ert ain
+iv ing
+ S o
+ pol ice
+ar ge
+ wom en
+in ed
+pl oy
+i ver
+  =
+' re
+ l ist
+ b ook
+ sm all
+ e as
+u ck
+read y
+ d ata
+ Un ited
+ P h
+r ap
+oh n
+us ed
+ h ist
+  Q
+ re ce
+ cur rent
+ he alth
+ir d
+id ed
+or th
+ pro cess
+/ /
+ b re
+ ch ange
+ comp any
+ pres ident
+ 1 8
+ te chn
+g er
+re en
+ru ct
+ bus iness
+r on
+ al ways
+ wh y
+ s ol
+i ans
+ m at
+ th ing
+ p ast
+ H ow
+ al ready
+ain ing
+ ab le
+ p rom
+ard s
+st and
+w it
+ l ater
+ pro ject
+ re se
+ or gan
+ ch ang
+a ign
+ pro f
+ u nt
+as es
+ st ory
+ d ri
+ j ob
+a ff
+ ex pect
+ O b
+ B e
+ cl ass
+ m ajor
+ou th
+ a way
+ cl aim
+ur s
+ S he
+ offic ial
+ m oney
+amp le
+ur al
+ f ree
+ t y
+ v is
+ t alk
+u red
+ inform ation
+iv en
+ur y
+ c ost
+he re
+ p at
+ e le
+ des ign
+ivers ity
+s ide
+ o ld
+pt ion
+ v iew
+ac y
+ k ill
+t o
+ c ity
+ st re
+le y
+ does n
+ import ant
+ le ast
+end ing
+ m ar
+s c
+ a ff
+ happ en
+ c ame
+ m en
+  est
+5 0
+r ist
+ camp aign
+ A d
+el s
+ d ays
+uth or
+ o per
+ m ust
+id es
+al f
+ur ity
+cc ess
+res ident
+ g row
+ s k
+ne y
+ fam ily
+ h op
+ f riend
+er al
+ t ax
+t ed
+ rec ord
+ m aking
+ te ll
+ en ough
+iss ion
+S t
+i or
+ M ar
+ v ar
+ k ind
+.. .
+ S p
+ con st
+id er
+ e lect
+is ing
+ v ide
+ s it
+al ity
+ G o
+ l arge
+pp ed
+o ad
+are nt
+b s
+us h
+ pol ic
+ to ok
+ n ame
+ de al
+if ied
+u ed
+ J ohn
+au gh
+ polit ical
+ Rep ublic
+  es
+o x
+ a ir
+r or
+iv ed
+1 9
+ ed it
+w ork
+ unt il
+A s
+ de l
+an e
+en n
+b y
+  ve
+oc rat
+ g ames
+ion al
+ work ing
+I f
+ l ine
+� �
+i ol
+ bec ome
+ C an
+ acc ording
+ de b
+ri es
+ me an
+E R
+is ter
+ for mer
+ e ver
+on y
+ S c
+em ber
+ D em
+ap s
+ act ually
+ ret urn
+at or
+ of ten
+ b as
+ w on
+is on
+i qu
+y ear
+ in tern
+ hum an
+ P l
+ t imes
+iz ation
+ M c
+ f und
+ g ive
+m ost
+w are
+ f ore
+en g
+ play ers
+ar ing
+ A ll
+ s ing
+ic le
+ se ver
+w h
+ro p
+it her
+s h
+ Com m
+ or der
+ R uss
+g in
+ wor d
+ med ia
+ag ue
+i um
+ se en
+b all
+ do ing
+ut ure
+f or
+ char ac
+ b it
+ M ay
+-- --
+ A t
+The re
+ra ft
+ l a
+ de v
+ soc ial
+ app ear
+ mark et
+ n ight
+ you ng
+o int
+ child ren
+ c rit
+  ,
+ contro l
+ ha ving
+ r a
+ P resident
+ e arly
+ f ac
+c hed
+ su re
+id d
+ w ent
+ per form
+ f ive
+or ies
+ sever al
+ to day
+i am
+ak en
+ Y ork
+ O r
+i ber
+ious ly
+b r
+ S y
+ C on
+ p ress
+ ev ent
+and s
+ 1 5
+le t
+ ar g
+ E uro
+ av ail
+ St ates
+ p ot
+1 1
+ o cc
+ su ccess
+ pro p
+ver t
+ whe ther
+un e
+ ex ample
+ 19 9
+art ment
+id ence
+ al ong
+ quest ion
+at s
+ N o
+ like ly
+u ff
+ mil it
+in c
+ e qu
+ inv ol
+ month s
+ w ater
+ mem bers
+m ber
+st er
+ot s
+ b en
+ se x
+ sh ort
+ f ight
+ with in
+  vers
+ f ail
+ d one
+ c ertain
+ am ong
+A nd
+ h our
+ me et
+em pt
+ on ce
+iv id
+i ally
+ B r
+b ack
+ub l
+ an t
+ under stand
+ C ol
+ort un
+ though t
+ s ide
+ des c
+it ing
+ur ch
+ me ans
+n ect
+l f
+ pri v
+ f uture
+ ac ross
+ en g
+ v iol
+ loc al
+ent ial
+ cour se
+gg est
+ produ ct
+ 1 1
+re w
+  #
+ invest ig
+on es
+ h old
+ul ation
+l er
+ver age
+end ed
+ ch o
+ Ob ama
+ kn own
+ M r
+ re ason
+g ress
+our n
+im ate
+ w rit
+  &
+m y
+ O n
+ act iv
+b ook
+ poss ible
+ prot ect
+ St ate
+ su ggest
+it ive
+ avail able
+ proble m
+� �
+oc i
+ W hen
+ n on
+ag ed
+ commun ity
+ y et
+ ask ed
+ l ight
+ H ouse
+ vide o
+ 201 6
+ or ig
+ m akes
+ a uthor
+al d
+ar m
+ c reat
+ get ting
+ c ut
+ens ive
+ belie ve
+ con d
+n ot
+ed eral
+ pro b
+ g iven
+ Euro pe
+ 3 0
+ report ed
+ur ther
+ other s
+o ber
+it ions
+iet y
+ Ch rist
+ n et
+ l and
+ c a
+en e
+ C ent
+or ld
+Y ou
+ C o
+as hing
+ F l
+ m us
+  i
+u ly
+p or
+ ann oun
+ T e
+ str ong
+  ]
+ de ath
+an ces
+ l im
+ n ational
+ir on
+1 2
+ Dem ocrat
+ start ed
+ 201 4
+ ag o
+  X
+  ident
+ s ent
+as ter
+ore d
+re st
+ h alf
+ A m
+' ve
+ em ploy
+ 201 5
+ iss ue
+ p ar
+ m om
+ h ig
+ cl ose
+ tr ying
+3 0
+ acc ess
+ follow ing
+her s
+ Un iversity
+ l ove
+ hist ory
+ part y
+A T
+ort s
+il ar
+ b ased
+ sa f
+ com es
+ S en
+ Americ a
+. ,
+ s our
+ M in
+F or
+in ation
+sel ves
+ al most
+ f oc
+� �
+ ser ies
+ ind ust
+ l ow
+res ent
+ivid ual
+u ment
+ to get
+ toget her
+ ide a
+u se
+ab ility
+ition al
+ look ing
+ 1 6
+  �
+ acc ount
+og rap
+ s ix
+ O ne
+ut es
+o f
+th ough
+re am
+ add ed
+al es
+ exper ience
+r ict
+ is n
+ imp ro
+ any thing
+ere nce
+ail s
+e v
+ie f
+ot e
+ say ing
+r ing
+ust om
+ cle ar
+i en
+wit ter
+ap er
+I N
+e b
+  er
+ tr ad
+ m or
+re ed
+un ch
+p ro
+ A f
+ir c
+ f av
+g ed
+ P r
+s y
+ an al
+c er
+a id
+ are a
+ r ul
+ pr act
+min ist
+1 5
+ comple te
+  /
+ 1 4
+ro wn
+ m iss
+ ph ot
+ Wh at
+ f ace
+' m
+ l ive
+ pres ent
+r is
+ ne ar
+ cour t
+a f
+ E x
+pl ay
+ra w
+ E ng
+ ind ividual
+ comp et
+ v ict
+ fil m
+ b ill
+ c ult
+ow s
+ Can ad
+ sing le
+ward s
+ r is
+ t aken
+os p
+ru g
+ th reat
+ bl ack
+ H ar
+ m ind
+g o
+ b ad
+ tr y
+a i
+ r ather
+ ent ire
+ m ult
+ P ol
+ a ut
+ C ity
+ col le
+ci ally
+ pro per
+ W ar
+ beh ind
+  z
+ 1 7
+ milit ary
+ want ed
+er man
+u ge
+ B rit
+ p ubl
+O n
+ conc ern
+Wh at
+id s
+ stud y
+ I m
+ qu ick
+int on
+ N orth
+at ors
+ to t
+ s um
+ C al
+p ar
+ re du
+ disc uss
+at ic
+n es
+o ff
+ sec urity
+ f all
+ D on
+O N
+ G r
+ra el
+ play er
+ m ess
+ spec ial
+ polic y
+ f oot
+A n
+ S ec
+ point s
+ pre t
+ br ing
+el t
+ar ter
+ rese arch
+W hen
+ 1 3
+ prob ably
+ att empt
+ T o
+ com b
+ashing ton
+p ly
+ll ing
+ p ick
+ D ep
+ comp an
+ h ouse
+c hes
+ro te
+ some one
+l ish
+ t aking
+ ke y
+ c ou
+ic ult
+R E
+ir l
+ f ield
+ M an
+1 6
+ w a
+ ben ef
+rem e
+o ver
+ im m
+A N
+ A ust
+ b ody
+tt p
+if y
+ t arg
+ con nect
+ con v
+ sim ilar
+ not hing
+ c oun
+ fr ont
+d d
+ com ing
+ right s
+c ing
+v iron
+ me as
+ f ood
+ j o
+ sign ific
+m ing
+. )
+S o
+ f urther
+ el se
+ desc rib
+ W orld
+ sp ace
+ s w
+ N ational
+ l ab
+ e y
+I S
+ e ither
+ le arn
+ ex ist
+ serv ice
+ri ed
+y n
+� �
+am ed
+ w rote
+ dec ision
+ how ever
+ar th
+w w
+a ult
+ac es
+ be gin
+ull y
+an a
+ w atch
+as ing
+itt ed
+ re pl
+ cre ate
+Th at
+he ad
+ 201 3
+un g
+ th ird
+ W ith
+ who le
+ iss ues
+ive ly
+: //
+ en er
+  |
+ W ashington
+ rel ations
+ s us
+  +
+ h it
+1 4
+ol ution
+ en c
+ ch all
+ rele ased
+ fe at
+ lead ers
+o on
+ m ass
+ st ep
+ com pl
+ ro om
+pp ing
+ro du
+ tr a
+ compan ies
+ G u
+ seem s
+ d oc
+ st op
+ Cl inton
+ 2 5
+ D av
+ent ly
+p ite
+ d ue
+ o pt
+a ul
+ d am
+a pe
+l am
+  :
+ c ustom
+ f ederal
+ c and
+ f ire
+ f ig
+ su per
+ Is rael
+ every thing
+ out side
+ be gan
+ J an
+ d ou
+ In st
+ fin al
+ How ever
+ charac ter
+r an
+n ow
+am er
+ bre ak
+ develop ment
+ in it
+ se lf
+um b
+re g
+e al
+ am ount
+arl ier
+ mat ter
+s w
+ B ar
+ad es
+ P art
+m b
+ it self
+ pos ition
+ t re
+ gener al
+ st ri
+ g un
+ib ility
+ S outh
+ G e
+le ment
+ t reat
+ contin ue
+pe cially
+an ks
+iv il
+ st ates
+end er
+ M ed
+__ __
+l u
+ ex ec
+A R
+u ation
+ s ound
+id ay
+ state ment
+ bec ame
+ 201 2
+ograp h
+ him self
+l im
+ ro le
+il i
+att le
+ ne g
+ In tern
+ st at
+ stud ents
+se c
+er y
+ S u
+ official s
+ 201 7
+ was n
+viron ment
+ them selves
+ off ice
+il t
+ b all
+ in j
+l ike
+� �
+ace book
+ prov ide
+ wom an
+ ag ree
+ a ction
+C h
+og n
+ l arg
+ signific ant
+ run ning
+ob al
+B C
+ diff icult
+ spec ific
+ prof ess
+ hour s
+ play ed
+ de ep
+ cap t
+ ph ys
+ build ing
+ ad minist
+1 8
+ac ed
+ g round
+ l at
+ tr ue
+ir t
+ sim ply
+ inter view
+ play ing
+ c op
+ ch arg
+ rep resent
+ 1 00
+ d om
+1 3
+ J ust
+ sa w
+ ab ove
+ourn al
+ comm on
+b ody
+r ight
+ bel ow
+ A pp
+ E d
+ a p
+ m ag
+ count ries
+' ll
+o id
+idd le
+ R es
+ ener gy
+ ev idence
+at ur
+as k
+e ks
+ang u
+ d rug
+ s ense
+ show s
+ resp ons
+ group s
+iqu e
+ friend s
+i od
+ re d
+ wh ite
+ pret ty
+ need s
+t ime
+ l ost
+ ex c
+ every one
+� �
+ A b
+ 5 0
+ tr ack
+ A ss
+ t em
+i j
+ d est
+ vers ion
+ ty p
+ Ch ina
+ b ar
+ add ress
+ H is
+ M us
+if t
+  )
+s er
+ val ue
+ac hed
+1 7
+ recent ly
+ need ed
+ p ain
+ r ad
+y le
+ for ward
+ C ar
+ 19 8
+ W est
+ chang es
+ cand id
+ mus ic
+ h om
+ d i
+ rele ase
+og le
+ e p
+om m
+cc ording
+ includ e
+ g en
+ al leg
+rib ut
+o ke
+ qu ite
+ l ate
+is c
+ t it
+ indust ry
+ ele ction
+ist ic
+ c irc
+n ed
+ m ot
+ on line
+ Wh ite
+ inst ead
+ A fter
+ G erman
+ s ite
+or ing
+ we eks
+ar c
+S T
+ep end
+ det er
+ an im
+ mom ent
+os ing
+ ac cept
+ent al
+ h ost
+ j ud
+ leg al
+ight s
+ sh oot
+m e
+ opp ortun
+e ed
+ vot e
+ T witter
+itt ing
+i ents
+ ab s
+ p le
+A l
+ es pecially
+w here
+ wr ong
+ rel ig
+ p arent
+ go al
+H ow
+ p ie
+b o
+ su ff
+ dec l
+iv al
+ we bs
+ M y
+ N ot
+ so on
+ap t
+e le
+ 2 4
+ ob ject
+ p red
+ C ong
+ econom ic
+ long er
+ Republic an
+ hig her
+med i
+ hop e
+ bl ock
+ul arly
+ag er
+ ed uc
+e es
+ W ill
+ he ld
+h am
+ w alk
+o e
+ per iod
+* *
+ A ug
+ir m
+ D r
+ b illion
+ foc us
+op h
+The y
+ techn ology
+ cons um
+ New s
+as ons
+ re view
+l t
+ c ode
+ law s
+ri pt
+ Se pt
+ wor ks
+ st ay
+ sh are
+c ial
+ Dep artment
+ O ct
+on se
+ targ et
+r ay
+ M ich
+ che ck
+id ing
+ The se
+ cons ider
+ l o
+ M arch
+du ct
+h od
+ l ed
+ st ru
+ person al
+ur d
+c le
+ h y
+ove red
+o le
+ re ve
+ result s
+ any one
+ v ol
+ Aust ral
+ St e
+ a ge
+ud e
+ de ad
+ word s
+ min utes
+ so ld
+ pot ential
+ d en
+c il
+ e arlier
+ cont ract
+ w ind
+ke y
+her n
+A d
+re l
+ fav or
+ b ase
+ate g
+ tot al
+ J uly
+ serv ices
+ S m
+ r ate
+ app lic
+pr il
+� �
+ pr im
+ ris k
+  �
+al t
+ ne cess
+ag ing
+act ion
+ J une
+he l
+ for ce
+il ities
+ pop ular
+ imp act
+ F acebook
+ sc ient
+u ary
+is l
+ E n
+ art icle
+h aps
+ spe ak
+ re v
+A S
+ M ond
+ang er
+our t
+ w ays
+ cre ated
+ R ed
+it er
+end s
+  <
+u el
+ a ud
+ic ro
+ sur pr
+f ect
+ proble ms
+ G od
+a ut
+ 201 1
+ can not
+E N
+ ant i
+f er
+ up d
+ res pect
+ expect ed
+ co ll
+ M e
+ sh ot
+ an sw
+it ution
+ quest ions
+2 5
+ip le
+ cl ub
+ P e
+P h
+ priv ate
+ap an
+ incre ase
+ exp ress
+ invol ved
+ Cong ress
+v al
+pl es
+itt en
+ c red
+it iz
+ rece ived
+re et
+ fun ction
+ eas y
+ Sy ri
+anc ial
+ en vironment
+ com ment
+ot o
+c ast
+ct or
+ cont ent
+ sub ject
+ comp ut
+ m ater
+av ing
+ l angu
+am s
+ H ill
+ p ort
+ Mond ay
+O R
+ pr ice
+ur g
+ announ ced
+ p ack
+ t ou
+ relations hip
+c he
+ us ers
+ ex act
+ bro ad
+at ives
+ he art
+ st aff
+ D o
+ c ivil
+p ut
+ s en
+ ne arly
+itt ee
+ S an
+ resp onse
+ orig inal
+ Cal if
+u le
+ exec ut
+ report s
+ll ed
+at ural
+ l iving
+ c ases
+ Fr iday
+ C ount
+le x
+i res
+ A pril
+ ar rest
+it es
+ m other
+ip s
+ues day
+ c al
+op s
+ p ur
+h ood
+on st
+ col lect
+ ins ide
+ o il
+ok es
+ ter ms
+ work ed
+est s
+ W ed
+ st ore
+ T V
+ bec om
+ n ation
+ P al
+ ty pe
+ d iv
+  {
+m on
+ s qu
+m p
+a el
+A t
+rough t
+ resp ond
+et er
+ell ig
+ f ans
+ g irl
+6 0
+ r ound
+ough t
+ a verage
+ N ow
+or g
+ im medi
+ 19 7
+ so ft
+ team s
+ l ack
+om b
+ S und
+ Russ ia
+ publ ished
+j oy
+ intern ational
+ kill ed
+ t akes
+" .
+o or
+b it
+ wor th
+e xt
+ Americ ans
+iz ing
+ T uesday
+ 4 0
+ est ab
+ist an
+ct ions
+T o
+ 201 0
+ net work
+ Is lam
+ ter ror
+ Af ric
+ work ers
+ ab ility
+ def in
+nes day
+ ch ance
+ g ave
+ c y
+ ass oci
+ ar ri
+vert ise
+n a
+ Wh ile
+ ad m
+ Brit ish
+ A ng
+ Go ogle
+ direct or
+ care er
+ c ell
+ who se
+ m id
+ dec ided
+ le ave
+r ain
+is es
+ num bers
+orn ia
+ic ated
+ov ed
+ we ap
+ f em
+ happen ed
+olog ical
+cl us
+ e mer
+n ers
+ bu y
+b ased
+ cap ital
+ J apan
+ aff ect
+k y
+ mod el
+ sour ce
+a ily
+ e t
+  @
+ go es
+ ro ad
+ N ove
+un t
+ l ives
+ S ome
+ A ct
+O ne
+ l og
+ O ff
+ inf lu
+ turn ed
+ P er
+ t al
+ pl ans
+ m atch
+b l
+a ur
+ current ly
+en ed
+ rec ogn
+ gl obal
+ st e
+urs day
+ appro ach
+ Wed nesday
+ ph one
+ mater ial
+ requ ire
+ 2 2
+os ition
+ fore ign
+ B y
+ Dav id
+ Sept ember
+ E l
+ off er
+ sit uation
+ administ ration
+ th ous
+ ev ents
+ord er
+ A g
+ m is
+ C or
+b or
+f ully
+ S ch
+ reg ard
+e g
+ill s
+ int rodu
+ Jan uary
+ B ro
+ cou ple
+es e
+ou d
+ h on
+in o
+ G l
+ l ower
+ tr ade
+o o
+e ch
+ P aul
+ Aug ust
+ l oss
+ C ourt
+ f elt
+ p ict
+um e
+s et
+ b oy
+ impro ve
+ mem ber
+  ill
+ 2 1
+le v
+ met hod
+ b ank
+ h uge
+ re pe
+ p ull
+ webs ite
+ r ace
+ to ol
+A C
+ f ather
+ Sund ay
+ Calif ornia
+ sec ret
+ st ruct
+ f re
+l oad
+ p age
+re ct
+ quick ly
+ leg isl
+en ing
+ w ide
+ sim ple
+ meet ing
+ he ard
+ perform ance
+et y
+ kn ew
+ Th ursday
+or ters
+es tern
+ fin ancial
+ F eb
+ d ig
+ tra vel
+ move ment
+ru ction
+ are as
+ tri ed
+ v ia
+ te xt
+ Nove mber
+ co ver
+” .
+ p ers
+4 0
+ n orm
+sy ch
+ or d
+---- ----
+us es
+ re ach
+ to wn
+ beh av
+m a
+at ory
+ econom y
+g ing
+ak er
+ reve al
+ po ll
+ Cent er
+ en joy
+g est
+ produ ction
+S h
+ bu ilt
+ hand s
+ allow ed
+ partic ip
+ includ ed
+ific ation
+ch ie
+l in
+ f ear
+) ;
+ se par
+ bo ard
+ want s
+' d
+d own
+ vict im
+ fe ll
+ict ion
+ partic ular
+ 2 3
+ em ail
+ vis it
+ b rought
+for ce
+ h ttp
+ prev ious
+ Bl ack
+f ace
+ P ost
+ c ause
+ur ning
+ mor ning
+u k
+ce ed
+A fter
+ s ize
+ att ention
+" ,
+ra z
+ h ot
+ide red
+ st ar
+W ith
+ sp ent
+ ve h
+ lat est
+ Sen ate
+ en s
+av y
+ p aper
+ m ention
+ Oct ober
+? ”
+ per fect
+ur b
+ for ces
+E S
+9 9
+ess ion
+ S w
+ Q u
+ Canad a
+i ant
+ ne igh
+ eng ine
+u f
+ tr aining
+� �
+I T
+und red
+ib ly
+Wh ile
+ dem and
+ T ex
+en ces
+ 200 8
+ pop ulation
+ar ily
+st on
+il le
+age ment
+all ed
+ l ink
+ look s
+ lead er
+i ers
+ J ew
+f l
+ond on
+led ge
+ P ar
+ce mber
+atur day
+ level s
+ r ac
+ Russ ian
+se qu
+ b i
+ w ond
+y ond
+he t
+h old
+ P ark
+ pro gress
+ic les
+et t
+ c itiz
+ ind epend
+ ex am
+ Europe an
+ get s
+ f air
+ var ious
+ grow th
+p s
+ f ast
+ bo x
+ T imes
+ co ach
+ Ind ia
+A L
+ cont act
+ talk ing
+ v o
+ C ont
+ Part y
+2 00
+ec ause
+ar ies
+r im
+ b ud
+ cons idered
+  }
+ H er
+ se arch
+ident s
+ stru gg
+ s ort
+ do ll
+ Le ague
+ Count y
+ med ical
+ u nd
+ im age
+.. ..
+op e
+in ks
+ investig ation
+ h or
+ add ition
+u it
+g round
+E D
+ parent s
+ langu age
+ set t
+ I S
+ s ens
+ rul es
+T r
+v ent
+ic o
+p ir
+ pr ison
+an i
+ r ange
+w o
+at form
+ spe ed
+  ess
+ I ran
+ re b
+f ield
+ St reet
+n y
+ys is
+ con duct
+u ments
+ellig ence
+om p
+ crit ic
+ K ore
+ra q
+c ome
+ig r
+un k
+ap h
+e ared
+ feat ures
+ s on
+z z
+et h
+ wr itten
+id ge
+I C
+ ser ious
+ sl ow
+ P at
+ incre asing
+ b ott
+ve y
+ M ark
+am ing
+ l iber
+ S aturday
+ De cember
+ st uff
+ sex ual
+ a chie
+ic ation
+ Mus lim
+in ing
+ soc iety
+ 2 8
+z e
+ ext reme
+ pre p
+ attack s
+ se ven
+l ight
+ mod ern
+c ies
+ s ong
+ job s
+ up on
+ e ight
+ doc ument
+im ately
+ prev ent
+is ions
+ m iddle
+ sp okes
+� �
+ L ondon
+ he ar
+ gu y
+ M ore
+ j ournal
+vertise ment
+id a
+ system s
+ see k
+ U K
+ab or
+ partic ularly
+ st ories
+F L
+ dou b
+I m
+ c ard
+ur t
+ren ch
+ h ous
+ d raw
+ ter m
+ des pite
+ opportun ity
+ ext ra
+ in n
+er c
+om an
+ mess age
+ I raq
+an ced
+ d ro
+ requ ired
+ru ary
+ ob v
+O P
+ent ially
+ m ach
+ def ense
+ big gest
+ sum mer
+ro om
+e ff
+ res our
+� �
+ s n
+ bl ood
+ pri or
+ reg ul
+ 2 6
+ major ity
+ cost s
+at ter
+ c ross
+ic ks
+ eff ort
+ viol ence
+ Don ald
+ complete ly
+am ent
+ product s
+ p en
+it ch
+ qu arter
+ill ed
+ t able
+ car ry
+ im ag
+ Mc C
+ h undred
+ n atural
+ are n
+ a w
+ sur v
+ cult ure
+ d ied
+ag o
+ak ers
+av es
+ E m
+n ces
+ E ast
+r ast
+ rem ain
+ occ ur
+ interest ing
+as c
+S he
+le ar
+ish ing
+ read ing
+ u lt
+b ed
+ hist or
+ look ed
+ g as
+ N et
+  ...
+ m ob
+reed om
+ly ing
+ certain ly
+ con vers
+ show ed
+ describ ed
+ r out
+ offic ers
+ M or
+ lead ing
+ answ er
+ 2 7
+ on es
+ exact ly
+ reg ion
+ claim s
+ p aid
+f ord
+ l ay
+augh t
+ad d
+ incre ased
+in ally
+al y
+ ex cept
+ fin ally
+ I nt
+ qu ality
+ somet imes
+ J ack
+u ing
+ cons erv
+ chang ed
+2 2
+ cl imate
+ foot ball
+ contin ued
+os es
+ut ions
+ c amer
+ Republic ans
+ens ion
+ start ing
+ pract ice
+ C he
+ sc ience
+ educ ation
+ S pe
+ cr im
+ Tex as
+ exper ien
+ C oun
+ous ly
+t r
+ n amed
+ S and
+ writ ing
+ com ments
+or ge
+osp ital
+ wr ite
+ib r
+en ge
+ grow ing
+ g iving
+ K e
+ Ind ian
+ would n
+ stand ard
+y l
+ ass ist
+ t ro
+ rem ains
+ po or
+ S oc
+H E
+ 200 9
+ us er
+ sc reen
+ � �
+ fail ed
+ar i
+ines e
+ C ons
+ prov ided
+  *
+ar r
+ part s
+port s
+ p ath
+ d anger
+ou l
+us ing
+ p urch
+ think ing
+ requ est
+ mult iple
+N o
+ B ill
+im ent
+ mov ie
+ J ames
+ ch ief
+t ain
+ dem onst
+ un f
+A M
+ pl atform
+ effect s
+in ary
+ � �
+ gu ys
+ E ven
+ le ague
+] [
+ab les
+ Democrat ic
+ Eng lish
+ pur p
+ Feb ruary
+op er
+co in
+ k ids
+ dam age
+ ro b
+ al one
+g es
+ cent er
+m it
+ ( @
+ c ele
+ br ain
+ could n
+ real ity
+ through out
+ener al
+ det ails
+ b an
+ K ing
+ar a
+ al though
+f ort
+2 3
+ thous ands
+ M on
+ur ance
+ rese arc
+ direct ly
+ p an
+ vot ers
+ f ile
+ includ es
+ cons ist
+am b
+row d
+ Mich ael
+ book s
+ to wards
+ tou ch
+ D es
+O T
+ saf e
+2 4
+ add itional
+ sub st
+r s
+ read y
+ f ix
+ be yond
+pp er
+it ness
+ us ually
+ a head
+ S erv
+it ute
+ pass ed
+ per haps
+B I
+� �
+ d ate
+amp ions
+ imp lement
+ immedi ately
+ eff orts
+h a
+ s we
+ ep is
+ av oid
+ m ill
+ d ark
+h ib
+ad em
+ coun ter
+ con cept
+ rem ember
+ it em
+ rec omm
+ deb ate
+ call s
+  il
+ to ward
+ e arn
+ tit le
+ sc ore
+ast ic
+an ch
+ se lect
+ pie ce
+C l
+w ise
+ let ter
+ s at
+ se ll
+ saf ety
+ g one
+ cle an
+ Democrat s
+ cho ice
+  ver
+ s le
+ mean ing
+ci ent
+ o ption
+ra ight
+ begin ning
+ sc ene
+ rel ative
+N ow
+O S
+ic ations
+e gr
+ re asons
+ c ast
+ru pt
+ op in
+ cond itions
+ress ion
+ appear s
+� �
+ri ef
+A ll
+ help ed
+ la unch
+ ag ency
+ Min ister
+ p sych
+ dis app
+ac hes
+ Ch inese
+in ated
+ design ed
+he st
+ do g
+ differe nce
+ate ver
+ w ife
+ t en
+ rece ive
+ S er
+  x
+ro y
+ G reen
+ cent ury
+ th row
+= =
+A D
+ offic er
+ col or
+ colle ge
+ mov ed
+ 6 0
+o es
+ R ober
+ Ass oci
+ proper ty
+ dis e
+ fig ure
+ chall eng
+ Will iam
+ir th
+m en
+ de g
+ri age
+ spe ech
+om en
+ phys ical
+  ign
+uc lear
+il ies
+ F irst
+ N e
+ press ure
+ cl os
+ B o
+ D ay
+ a im
+  ut
+ comp ared
+ may be
+ sus pect
+ s il
+ cop y
+ub e
+d e
+ cor por
+im um
+ber g
+s p
+iv ity
+u x
+B y
+ s al
+ comple x
+ O f
+ The n
+ R ich
+ 2 9
+ T ur
+ M ex
+ic ient
+ar ian
+ soft ware
+ inc ome
+ stud ent
+n ew
+A P
+ n ature
+augh ter
+air s
+ ey es
+ my self
+il es
+ enc our
+ven ue
+? "
+ sm art
+I s
+it or
+ alleg ed
+ ar ch
+ dev ice
+ ro ck
+ f an
+8 0
+i able
+ necess ary
+uf act
+ happ y
+U S
+ p ark
+ol ute
+ charac ters
+ organ ization
+  �
+ co ol
+ mov ing
+ larg est
+ Pl ay
+ follow ed
+ est im
+ polit ics
+ act ions
+M y
+ock ed
+ power ful
+j ust
+ pre m
+ag on
+ me ant
+R e
+ V al
+w ood
+ treat ment
+ sp ending
+ we b
+ a ware
+res h
+ w all
+ bl og
+er o
+ anal ysis
+ M art
+ t our
+ fe ed
+ir ing
+ar ning
+ pos itive
+ch an
+ n om
+ citiz ens
+ sh own
+ dis play
+ sc he
+ es c
+y an
+ candid ate
+ your self
+ tw e
+ent y
+ lim ited
+ st age
+ot a
+ I I
+ bud get
+os h
+er ve
+ s ales
+Ad vertisement
+m ore
+ y es
+ pre c
+ school s
+ b and
+ char ge
+ comput er
+ut y
+in n
+it ation
+ F rench
+or ks
+ cont ribut
+ c rowd
+ d raft
+ ref er
+ m ix
+ Ang el
+ for ced
+ conf erence
+or ney
+or ter
+ meas ure
+ig ration
+ dri ve
+ b al
+ event ually
+ eas ily
+ S im
+ president ial
+ cor rect
+p re
+ T or
+ over all
+ st raight
+k en
+ relig ious
+in y
+ Su per
+ app eared
+ tr uth
+ not e
+ W ind
+ J er
+ H ere
+A ccording
+ch ange
+ c at
+ p us
+ aut om
+ conf ir
+ allow s
+ fam ilies
+ execut ive
+N ew
+ Austral ia
+ r ap
+ an g
+ un ique
+ exp and
+ custom ers
+ v irt
+ individual s
+ dis p
+ stre ng
+ cr ime
+ fe ature
+ Sm ith
+ cr is
+ il leg
+ det ail
+ b attle
+ress ed
+ B en
+ A ir
+b um
+) :
+B e
+ fre qu
+ dec ades
+ em b
+ d rop
+ develop ed
+ comm and
+ f irm
+ L a
+ att ract
+00 00
+ seem ed
+ adv ant
+ chall enge
+ contin ues
+ sign ed
+v ille
+r ated
+ pred ict
+ bro ther
+ Syri a
+4 5
+ l if
+U n
+ r ates
+ gr ad
+ know s
+c raft
+ l ines
+ App le
+ Coun cil
+ Intern ational
+ol ic
+ benef its
+ain t
+I A
+ r are
+ success ful
+e an
+ ke pt
+ Pol ice
+2 7
+ n ice
+ cent ral
+ know ledge
+le ase
+ Com p
+ st o
+ h ar
+ app arent
+ re ached
+ go als
+ re form
+2 6
+ 19 6
+ prom ot
+S ome
+ Intern et
+ man ager
+ l ic
+ E arth
+ anal y
+ sp ot
+eng th
+ g ives
+ us es
+a res
+ m ist
+D on
+b and
+ prev iously
+ ind ic
+k i
+E T
+ tr ust
+ min or
+3 5
+ not ed
+ Christ ian
+n own
+ v ac
+ite ly
+ high ly
+wh ile
+ man ufact
+ fe et
+ ide as
+ c ities
+ter m
+ stud ies
+ad o
+ sus p
+ full y
+n et
+ do or
+ U p
+ St ar
+ant ly
+ shoot ing
+ ref lect
+ be aut
+ B el
+ic ago
+ot i
+ F rom
+ project s
+ Fl or
+ organ iz
+ em ot
+i ance
+iver se
+ sen ior
+ inc ident
+p art
+ C up
+ Go vern
+w ide
+ program s
+ call ing
+ M ac
+ ra ised
+se y
+ weap ons
+B A
+ al tern
+ larg er
+ great er
+bo ard
+ sa ve
+ pe ace
+ favor ite
+ T om
+ go ld
+m ar
+A r
+on ents
+ n uclear
+ rel ated
+ Fr anc
+ ca used
+on ent
+ S chool
+ound s
+____ ____
+ pl aces
+a ith
+ own ers
+c ul
+ int elligence
+ tr aff
+ro ll
+ e th
+ R ec
+ researc hers
+ fight ing
+2 8
+2 9
+ prim ary
+ vo ice
+ Ge orge
+ stat us
+ pat ients
+ employ ees
+ A nt
+ reg ular
+i pp
+ crim inal
+ol es
+ G eneral
+ro l
+ f ine
+ ey e
+ic ed
+ B rown
+it ude
+ s end
+ r ule
+ g reen
+ cle arly
+ r ise
+C C
+ pr ices
+N ot
+ l iter
+ E very
+ 200 7
+se e
+ic it
+ D ef
+ R ob
+ p ush
+ H igh
+en cies
+ resour ces
+b ox
+ ar m
+ sp read
+sec ut
+ic a
+ fem ale
+b on
+u ana
+ow ers
+a ud
+ Un ion
+od ay
+y a
+us ion
+ing ly
+ cris is
+ wa it
+ B ay
+ creat ing
+ sour ces
+ ha ven
+ D is
+ supp osed
+le ction
+ activ ity
+id ers
+ M et
+I D
+2 1
+ sh ut
+O M
+oc ks
+ dist rict
+ate gy
+il ed
+ign ed
+ claim ed
+ fund ing
+ charg es
+ st yle
+ sp ir
+ conf lic
+ L ou
+ve re
+ p un
+ polic ies
+if ying
+ part ies
+. '
+ S un
+ te lev
+ la un
+ sp end
+ int egr
+ n ames
+ G old
+ l ik
+ Re g
+E O
+s pect
+ sl ight
+ij uana
+ see ing
+E C
+ norm al
+ agree ment
+ trad itional
+ h ospital
+on a
+ bas ic
+ al bum
+ belie ved
+ end ed
+ wond er
+ off ered
+ gr and
+ ob ser
+ happ ens
+ear ch
+ Flor ida
+ect ion
+ im pl
+ ac qu
+ opt ions
+i pped
+S c
+ min ister
+ b irth
+9 0
+ wh om
+ be at
+ mar riage
+ ad op
+ Ch icago
+ j ump
+d om
+ prop os
+ pr int
+ak ed
+S A
+5 00
+ sc en
+ German y
+ add ing
+m ark
+ Sc ott
+qu e
+ stre et
+ qu al
+ B re
+IN G
+ ins urance
+ing er
+ tr ou
+ A P
+ Ar ab
+ag s
+ be g
+ ass ault
+ reveal ed
+ le aving
+ M ost
+ B er
+ r ank
+ ens ure
+ will ing
+7 0
+ un s
+ A ccording
+ arrest ed
+ 200 6
+ro id
+ Hill ary
+ se ction
+ cred it
+ b rief
+  ir
+ per m
+ app l
+ww w
+. ’
+ un c
+ deter min
+ record s
+ most ly
+u pp
+um an
+ en force
+ Tr ans
+ w at
+ f reedom
+ O h
+ st ation
+ behav ior
+ author ities
+” ,
+ c ry
+O U
+ m ount
+ He alth
+ A lex
+ mass ive
+ tem per
+ab y
+ mil es
+E L
+ abs olute
+ produ ce
+ist ry
+ P ort
+ act ual
+ pat tern
+ concern s
+ en em
+ t end
+ w ild
+p ri
+ val ues
+  >
+ Eng land
+ M o
+ b orn
+ f at
+ac ing
+ dr ink
+ applic ation
+al se
+P ro
+p en
+ pl ant
+ com mer
+ C r
+H ere
+ post ed
+ John son
+or ial
+ off ers
+ cele br
+ adv oc
+r ont
+ wh atever
+ L et
+ci ence
+c her
+ me chan
+ Sec ret
+rib ution
+ run s
+ m ale
+ week end
+n o
+g en
+1 00
+ feel ing
+ pict ure
+ produ ced
+ cho ose
+ k ick
+ independ ent
+ tr ain
+ri an
+ M ag
+ We ll
+so ft
+ learn ed
+ the ory
+ comm it
+ belie f
+ show ing
+ d ire
+ri ption
+Im age
+ Wh y
+ur ies
+ ad ult
+ we ight
+ m er
+u ild
+ crit ical
+ co verage
+B l
+ law y
+out hern
+ te ac
+ im ages
+ doll ars
+ ent er
+ deb t
+� �
+ neg oti
+ c ars
+ P ress
+3 3
+ legisl ation
+arl iam
+ m ur
+ init ial
+ S am
+ res idents
+ W estern
+ H am
+ str ategy
+ occ as
+ jud ge
+ra v
+ E U
+ prop osed
+ no vel
+est ic
+ l ose
+ m ission
+ N FL
+ d ream
+ benef it
+ L aw
+ cond ition
+ W all
+r am
+ f it
+ dig ital
+ent ed
+ort hern
+ Fr ance
+ic ial
+ influ ence
+ et c
+ advant age
+ d aily
+ estab lish
+ber t
+ rest rict
+m ine
+ad a
+ dev ices
+ prot est
+ord s
+ O ur
+ce ll
+ br and
+ confir med
+ G et
+ oper ations
+ Ph il
+arliam ent
+ill ing
+ respons ible
+ repl ace
+u gg
+ camer a
+ c ru
+gh an
+ b ur
+ sol ution
+ che m
+B S
+ v ill
+ le arning
+ Comm ittee
+ prov ides
+ charg ed
+h ttp
+ St ud
+ effect ive
+ ask ing
+a e
+ic ians
+ m ap
+om s
+ Pe ople
+How ever
+ open ing
+ expl ained
+ M ike
+ hig hest
+ ch air
+E x
+ri al
+The se
+ gener ally
+ bas is
+ = >
+ tri al
+ hundred s
+ 3 1
+p oint
+ ag reed
+ opin ion
+ inst all
+um n
+oc r
+ear s
+ typ es
+� �
+ announ ce
+az ing
+z a
+ill er
+ L ab
+ wor se
+ interest ed
+ def end
+ M il
+ he avy
+ G reat
+ commun ities
+ elect ric
+ M al
+ 3 5
+r ate
+ part ners
+ eas ier
+il ing
+ neg ative
+ re ject
+ on to
+ g e
+ dise ase
+ vict ory
+ associ ated
+ Franc is
+i pe
+ b order
+r ig
+t ies
+ T er
+ R o
+ bott om
+ Just ice
+ telev ision
+ put ting
+ortun ately
+ understand ing
+ F ound
+ dou ble
+ hous ing
+ mar ijuana
+ he ro
+om as
+com ing
+ad ing
+ lim it
+ e arth
+4 4
+ r at
+ becom es
+ f resh
+ acc used
+c ont
+ Kore a
+ B ush
+ epis ode
+ Off ice
+ sle ep
+ograph y
+i os
+C on
+ c ore
+G et
+ intern et
+ mem ory
+ D iv
+ic ip
+wit ch
+ becom ing
+ b ed
+ contro vers
+ g ay
+ fr ame
+ P C
+st e
+ sol id
+ opp osition
+ J im
+ scient ists
+ mill ions
+I L
+ stri k
+le vel
+ B ecause
+ we alth
+ redu ce
+ invest ment
+ def e
+ O ther
+ L os
+ loc ation
+w in
+ extreme ly
+ compet ition
+ L iber
+ th us
+ n ine
+ili ar
+ win ning
+ lab or
+ sur round
+ Islam ic
+ Canad ian
+ B it
+ open ed
+ t ick
+ ser ved
+and om
+sc rib
+i h
+ 9 0
+ inc red
+ Q ue
+our s
+ mob ile
+ ass um
+o ly
+ak istan
+v est
+ jo in
+ M any
+if ul
+ol f
+ dest roy
+m iss
+ aud ience
+ir gin
+G B
+ mach ine
+ n orth
+icro soft
+ act ive
+ supp orters
+ m ax
+  00
+3 2
+l ant
+ separ ate
+3 6
+ iss ued
+ achie ve
+i ation
+ rest aur
+ Ar t
+v ention
+re y
+ d ed
+we ll
+k nown
+ sh ared
+ drug s
+ res ist
+ Inst itute
+� �
+F C
+ expl ain
+ dec ade
+ illeg al
+ h arm
+i us
+ purp ose
+ f aith
+ watch ing
+ sp oke
+ sit es
+ U N
+ 7 0
+ M od
+ s outh
+ J ones
+ view s
+ H all
+l ished
+ dep artment
+ com fort
+ist ics
+ 8 0
+ ch urch
+ak s
+ D el
+igr ants
+ M ad
+ sh ip
+ r an
+ed y
+ Comm ission
+e y
+ man agement
+ou ston
+ Wind ows
+ac ity
+ S ince
+w orks
+im b
+ic i
+� �
+ar io
+ exist ing
+ Sec urity
+ profess ional
+ fl oor
+ U k
+ trans port
+ as pect
+ad y
+ Rober t
+ doub t
+ M iss
+ul f
+ ser ve
+ p urs
+ Pal est
+ F BI
+ Ad d
+ back ground
+as y
+ return ed
+ find ing
+ A tt
+ neigh bor
+ s pl
+ c ash
+ Ch ris
+at ically
+N N
+in ate
+az on
+ gener ation
+ tre nd
+ he aring
+s pe
+res p
+ k id
+ leaders hip
+ Angel es
+A meric
+ un like
+go ing
+ pl ays
+ trans fer
+ c ateg
+h ouse
+ sur face
+ defin itely
+ concern ed
+ w itness
+ dri ving
+ Af ghan
+ struct ure
+ doc uments
+ct ors
+ arg ument
+land s
+ inj ury
+ann el
+� �
+ gu ard
+ laun ched
+D A
+ sp orts
+ Y our
+r ick
+ l oad
+P S
+ danger ous
+ b omb
+ L ike
+ Afric an
+od es
+ c ards
+ far m
+ud d
+M r
+ te ach
+ v s
+ aff ord
+ f uel
+ S up
+ s an
+ampions hip
+ B ig
+ic y
+ dec isions
+ Sand ers
+z en
+a it
+ disc overed
+e ah
+ co al
+ veh icle
+wh ich
+ul ated
+m et
+ c aught
+3 8
+ R om
+  ;
+ D ist
+ m icro
+ Comm un
+ item s
+ app eal
+ comm ittee
+el ine
+ dire ction
+ ref ere
+ bl ue
+! !
+ phot o
+ s un
+ tell ing
+ qu e
+ mur der
+ test ing
+ Ch urch
+ant ed
+ Afric a
+ n or
+ hold ing
+O L
+in ct
+f erence
+ large ly
+ibr ary
+ support ed
+ traff ic
+ re act
+or row
+ we l
+ R ock
+ not ice
+ am b
+r d
+and on
+ cl osed
+ W il
+oy al
+ repe ated
+ d aughter
+ candid ates
+ suggest ed
+ rad io
+ B ank
+ar ant
+r ad
+b ut
+ meas ures
+ Mex ico
+4 9
+ wor st
+ M at
+ Jew ish
+s erv
+ cont ext
+ belie ves
+ d ie
+ sc ale
+ conserv ative
+l or
+ In c
+ag n
+7 5
+ Lou is
+ commer cial
+ tool s
+i est
+ Car ol
+ girl s
+ not es
+ allow ing
+ plan et
+ T re
+ S l
+ small er
+ I r
+ C ap
+ old er
+ T HE
+m ail
+ P re
+and er
+ victim s
+ entire ly
+ streng th
+ anim als
+ens es
+ A c
+o very
+ wa iting
+ph one
+ P akistan
+he m
+e qu
+ gr aph
+ ex erc
+P A
+ interest s
+  ur
+ del iver
+ comp ar
+ requ ires
+� �
+ gu ess
+� �
+ sur vey
+ A re
+ ra ise
+ d er
+ O ver
+h ow
+ un it
+te red
+iz es
+it able
+ activ ities
+O ur
+ e at
+ Associ ation
+ four th
+se ason
+ mention ed
+ G ame
+ 19 5
+ business es
+ 12 7
+ig an
+ h ack
+ f alse
+ T y
+ c ook
+ow l
+ l ength
+is f
+! ”
+ t ask
+ con sequ
+ can cer
+ tr uly
+ St ep
+ inst ance
+ tri p
+ jo ined
+ Uk rain
+ D irect
+ spec ies
+ att end
+n el
+ st ated
+ F ore
+ E v
+d o
+ ha ir
+4 8
+ K h
+ pl aced
+ man aged
+n ight
+cept ion
+in ter
+ Inst ead
+hen s
+ ple ase
+ enforce ment
+ang ing
+ ann ual
+ H ouston
+ mod els
+ ex change
+ Sup reme
+ J eff
+k ins
+ foc used
+ dri ver
+ V er
+ r ough
+ot ed
+ str ateg
+ p et
+ J ose
+ rem oved
+ Ar my
+ J es
+ sto pped
+ acc ur
+ P ri
+ Japan ese
+  //
+ g ain
+ plan ning
+ck now
+ul ate
+ m ental
+r ange
+ M er
+ ass ess
+oss ible
+igh ter
+ init i
+ h us
+ S il
+ J ud
+ ph il
+ det ect
+se mb
+ st ock
+ic on
+ F in
+  ice
+le ge
+ G OP
+are n
+ spokes man
+ont o
+E M
+ocr acy
+ruct ure
+ estab lished
+ fail ure
+ convers ation
+ has n
+ be er
+ b ul
+an o
+ c atch
+ cont ain
+out s
+l ig
+ set ting
+ miss ing
+ 200 5
+� �
+u ct
+and a
+C H
+ comm itted
+M ore
+ recomm end
+ def ensive
+ R ub
+ C EO
+ arri ved
+ f ant
+ off ensive
+az ine
+3 7
+ appro pri
+ P et
+it z
+ prov iding
+ down load
+an cy
+ conc lud
+u ke
+N A
+ s ch
+ pres ence
+ tell s
+ introdu ced
+ Al though
+ 201 8
+ron ic
+ tax es
+h i
+ t ough
+Tr ump
+ se qu
+R ead
+ fam iliar
+ h ate
+ const ruction
+u zz
+pl ace
+ news p
+ kill ing
+ fin ished
+ Brit ain
+w ing
+ use ful
+ un ivers
+ part ner
+is ation
+ obv ious
+c ks
+ protect ion
+rib ute
+a wn
+st ream
+ut ers
+ circ um
+ Y es
+t ained
+re al
+ ex clus
+ su st
+ keep ing
+ g ender
+ wind ow
+ upd ate
+ ag gress
+ G roup
+ just ice
+ ident ity
+R A
+ ve ter
+ discuss ion
+ t im
+ st ick
+ relative ly
+ suggest s
+oll y
+ V irgin
+ second s
+itution al
+hed ul
+ other wise
+, '
+ a cknow
+ T im
+ F ox
+our ce
+od ies
+ Th omas
+ cut s
+wh at
+ Israel i
+ emer g
+form ation
+ sk ills
+app ed
+ ab use
+ trans l
+k a
+ M icrosoft
+ Serv ice
+ am azing
+v ant
+ hom es
+ cl ick
+ Le g
+ol a
+dd en
+ than ks
+ spe aking
+y m
+v is
+ there fore
+ann ed
+ad ed
+ organiz ations
+ connect ion
+ supp ly
+H L
+ pre fer
+ un ion
+ ident ified
+ health y
+ dep end
+ Rich ard
+ un its
+� �
+l a
+ R yan
+ Ph oto
+ w ish
+ dec ide
+ Pro f
+ 4 5
+el ess
+oc al
+ ser ver
+ poss ibly
+ony m
+ big ger
+re es
+ s ides
+ develop ers
+ Ch ar
+ ele ments
+о �
+up s
+pro f
+g ers
