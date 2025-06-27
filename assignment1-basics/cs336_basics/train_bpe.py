@@ -177,7 +177,7 @@ def train_bpe(
 
     # Build initial data structures
     pair_freqs = get_pair_freqs(token_freqs)
-    
+    #. 
     print(f"Initial tokens: {len(token_freqs)}, pairs: {len(pair_freqs)}")
     
     # Merge
