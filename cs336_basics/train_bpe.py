@@ -91,8 +91,6 @@ def get_pair_freqs(token_freqs: Counter[tuple[bytes]]) -> Counter[tuple[bytes, b
     """
     pair_freqs: Counter[tuple[bytes, bytes]] = Counter()
     for token, freq in token_freqs.items():
-        #for i in range(len(token) - 1):
-            #pair_freqs[(token[i], token[i + 1])] += freq
         for a, b in zip(token, token[1:]):
             pair_freqs[(a, b)] += freq
     
@@ -110,22 +108,10 @@ def get_most_frequent_pair(pair_freqs: Counter[tuple[bytes, bytes]]) -> tuple[by
     # return the lexicographically greatest
     return max(candidates)
 
-def build_reverse_index(token_freqs: Counter[tuple[bytes]]) -> dict[tuple[bytes, bytes], set[tuple[bytes]]]:
-    """Build reverse index: pair -> set of tokens containing that pair"""
-    pair_to_tokens = defaultdict(set)
-    
-    for token in token_freqs:
-        for i in range(len(token) - 1):
-            pair = (token[i], token[i+1])
-            pair_to_tokens[pair].add(token)
-    
-    return dict(pair_to_tokens)
-
-def merge_token_freqs_and_update_pair_freqs(
+def merge_token_freqs(
     token_freqs: Counter[tuple[bytes]],
     pair_to_merge: tuple[bytes, bytes],
-    pair_freqs: Counter[tuple[bytes, bytes]],
-    pair_to_tokens: dict[tuple[bytes, bytes], set[tuple[bytes]]]
+    pair_freqs: Counter[tuple[bytes, bytes]]
 ) -> tuple[Counter[tuple[bytes]], Counter[tuple[bytes, bytes]], dict[tuple[bytes, bytes], set[tuple[bytes]]]]:
     """
     Merge the most frequent pair
@@ -134,53 +120,43 @@ def merge_token_freqs_and_update_pair_freqs(
     a, b = pair_to_merge
     merged = a + b
 
-    token_to_process = pair_to_tokens.get(pair_to_merge, set()).copy()
+    changes = []
 
-    for token in token_to_process:
-        if token not in token_freqs:
-            continue
-        
-        freq = token_freqs[token]
+    for token, freq in token_freqs.items():
         new_token: list[bytes] = []
 
         i = 0
+        changed = False
         while i < len(token):
             if i < len(token) - 1 and token[i] == a and token[i+1] == b:
                 new_token.append(merged)
+                changed = True
                 i += 2
             else:
                 new_token.append(token[i])
                 i += 1
-        
-        new_token = tuple(new_token)
 
-        token_freqs[token] -= freq
-        if token_freqs[token] <= 0:
-            del token_freqs[token]
+        if changed:
+            new_token = tuple(new_token)
+            changes.append((token, new_token, freq))
+
+    for token, new_token, freq in changes:
+        del token_freqs[token]
         token_freqs[new_token] += freq
 
-        # Update pair frequencies and reverse index
-        for l, r in zip(token, token[1:]):
-            pair = (l, r)
+        # 1. delete pairs in token
+        for i in range(len(token) - 1):
+            pair = (token[i], token[i+1])
             pair_freqs[pair] -= freq
             if pair_freqs[pair] <= 0:
                 del pair_freqs[pair]
-            if pair in pair_to_tokens:
-                if token in pair_to_tokens[pair]:
-                    pair_to_tokens[pair].discard(token)
-                if not pair_to_tokens[pair]:
-                    del pair_to_tokens[pair]
-        
-        for l, r in zip(new_token, new_token[1:]):
-            pair = (l, r)
+
+        # 2. add pairs in new_token
+        for i in range(len(new_token) - 1):
+            pair = (new_token[i], new_token[i+1])
             pair_freqs[pair] += freq
-            if pair not in pair_to_tokens:
-                pair_to_tokens[pair] = set()
-            pair_to_tokens[pair].add(new_token)
 
-    return token_freqs, pair_freqs, pair_to_tokens
-
-
+    return token_freqs, pair_freqs
 
 def train_bpe(
     input_path: str,
@@ -201,7 +177,6 @@ def train_bpe(
 
     # Build initial data structures
     pair_freqs = get_pair_freqs(token_freqs)
-    pair_to_tokens = build_reverse_index(token_freqs)
     
     print(f"Initial tokens: {len(token_freqs)}, pairs: {len(pair_freqs)}")
     
@@ -210,8 +185,8 @@ def train_bpe(
         if not pair_freqs:
             break
         best_pair = get_most_frequent_pair(pair_freqs)
-        token_freqs, pair_freqs, pair_to_tokens = merge_token_freqs_and_update_pair_freqs(
-            token_freqs, best_pair, pair_freqs, pair_to_tokens)
+        token_freqs, pair_freqs = merge_token_freqs(
+            token_freqs, best_pair, pair_freqs)
         new_token = best_pair[0] + best_pair[1]
         vocab[len(vocab)] = new_token
         merges.append(best_pair)
