@@ -1,6 +1,6 @@
 from collections.abc import Iterator
 from multiprocessing import Pool
-from collections import Counter, defaultdict
+from collections import Counter
 from cs336_basics.pretokenization_example import find_chunk_boundaries
 import regex as re
 
