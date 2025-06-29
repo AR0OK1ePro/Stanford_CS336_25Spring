@@ -1,6 +1,6 @@
 from collections.abc import Iterator
 from multiprocessing import Pool
-from collections import Counter, defaultdict
+from collections import Counter
 from cs336_basics.pretokenization_example import find_chunk_boundaries
 import regex as re
 
@@ -177,7 +177,7 @@ def train_bpe(
 
     # Build initial data structures
     pair_freqs = get_pair_freqs(token_freqs)
-    #. 
+    
     print(f"Initial tokens: {len(token_freqs)}, pairs: {len(pair_freqs)}")
     
     # Merge
