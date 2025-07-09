@@ -116,6 +116,9 @@ class RMSNorm(torch.nn.Module):
         result = einsum(x * self.gain, RMS_reverse, "... d_model, ... -> ... d_model")
         return result.to(in_dtype)
 
+def SiLU(x: torch.Tensor) -> torch.Tensor:
+    return x * torch.sigmoid(x)
+
 class SwiGLU(torch.nn.Module):
     """
     SwiGLU feed-forward block as used in modern transformer architectures.
@@ -165,11 +168,11 @@ class SwiGLU(torch.nn.Module):
         # First linear projection
         hidden = einsum(self.weight_1, x, "d_ff d_model, ... d_model -> ... d_ff")
         # SiLU activation (Swish)
-        SiLU = hidden * torch.sigmoid(hidden)
+        silu = SiLU(hidden)
         # Gating projection
         Gate = einsum(self.weight_3, x, "d_ff d_model, ... d_model -> ... d_ff")
         # Output projection
-        return einsum(self.weight_2, SiLU * Gate, "d_model d_ff, ... d_ff -> ... d_model")
+        return einsum(self.weight_2, silu * Gate, "d_model d_ff, ... d_ff -> ... d_model")
 
 class RotaryPositionEmbedding(torch.nn.Module):
     """

@@ -9,7 +9,7 @@ import numpy.typing as npt
 import torch
 from torch import Tensor
 
-from cs336_basics import transformer, train_bpe, tokenizer
+from cs336_basics import transformer, train_bpe, tokenizer, train_transformer
 
 
 def run_linear(
@@ -458,6 +458,7 @@ def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:
         Float[Tensor,"..."]: of with the same shape as `in_features` with the output of applying
         SiLU to each element.
     """
+    return transformer.SiLU(in_features)
     raise NotImplementedError
 
 
@@ -481,6 +482,7 @@ def run_get_batch(
         is the sampled input sequences, and the second tuple item is the corresponding
         language modeling labels.
     """
+    return train_transformer.data_loading(dataset, batch_size, context_length, device=device)
     raise NotImplementedError
 
 
@@ -514,6 +516,7 @@ def run_cross_entropy(inputs: Float[Tensor, " batch_size vocab_size"], targets: 
     Returns:
         Float[Tensor, ""]: The average cross-entropy loss across examples.
     """
+    return train_transformer.cross_entropy(inputs, targets)
     raise NotImplementedError
 
 
@@ -526,6 +529,7 @@ def run_gradient_clipping(parameters: Iterable[torch.nn.Parameter], max_l2_norm:
 
     The gradients of the parameters (parameter.grad) should be modified in-place.
     """
+    return train_transformer.gradient_clipping(parameters, max_l2_norm)
     raise NotImplementedError
 
 
@@ -533,6 +537,7 @@ def get_adamw_cls() -> type[torch.optim.Optimizer]:
     """
     Returns a torch.optim.Optimizer that implements AdamW.
     """
+    return train_transformer.AdamW
     raise NotImplementedError
 
 
@@ -561,6 +566,7 @@ def run_get_lr_cosine_schedule(
     Returns:
         Learning rate at the given iteration under the specified schedule.
     """
+    return train_transformer.learning_rate_schedule(it, max_learning_rate, min_learning_rate, warmup_iters, cosine_cycle_iters)
     raise NotImplementedError
 
 
@@ -580,7 +586,8 @@ def run_save_checkpoint(
             we've completed.
         out (str | os.PathLike | BinaryIO | IO[bytes]): Path or file-like object to serialize the model, optimizer, and iteration to.
     """
-    raise NotImplementedError
+    train_transformer.save_checkpoint(model, optimizer, iteration, out)
+    # raise NotImplementedError
 
 
 def run_load_checkpoint(
@@ -601,6 +608,7 @@ def run_load_checkpoint(
     Returns:
         int: the previously-serialized number of iterations.
     """
+    return train_transformer.load_checkpoint(src, model, optimizer)
     raise NotImplementedError
 
 
