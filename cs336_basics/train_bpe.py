@@ -1,8 +1,10 @@
 from collections.abc import Iterator
 from multiprocessing import Pool
-from collections import Counter
+from collections import Counter, defaultdict
 from cs336_basics.pretokenization_example import find_chunk_boundaries
+import tqdm
 import regex as re
+import os
 PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 PRETOKENIZER = re.compile(PAT)
 
@@ -46,6 +48,7 @@ def process_chunk(args) -> Counter[tuple[bytes]]:
     """
     # chunk, special_tokens = args
     input_path, start, end, special_tokens = args
+    print(f"[PID {os.getpid()}] Processing chunk {start}-{end}")
     with open(input_path, "rb") as f:
         f.seek(start)
         chunk = f.read(end - start).decode("utf-8", errors="ignore")
@@ -80,6 +83,7 @@ def parallel_pretokenize_and_count(
             # chunk = f.read(end - start).decode("utf-8", errors="ignore")
             # chunk_args.append((chunk, special_tokens))
     chunk_args = [(input_path, start, end, special_tokens) for start, end in zip(boundaries[:-1], boundaries[1:])]
+    print("Number of chunks: ", len(chunk_args))
 
     # Run pre-tokenization on your chunk and store the counts for each pre-token
     with Pool(processes=num_processes) as pool:
@@ -114,10 +118,22 @@ def get_most_frequent_pair(pair_freqs: Counter[tuple[bytes, bytes]]) -> tuple[by
     # return the lexicographically greatest
     return max(candidates)
 
+def build_reverse_index(token_freqs: Counter[tuple[bytes]]) -> dict[tuple[bytes, bytes], set[tuple[bytes]]]:
+    """Build reverse index: pair -> set of tokens containing that pair"""
+    pair_to_tokens = defaultdict(set)
+    
+    for token in token_freqs:
+        for i in range(len(token) - 1):
+            pair = (token[i], token[i+1])
+            pair_to_tokens[pair].add(token)
+    
+    return dict(pair_to_tokens)
+
 def merge_token_freqs(
     token_freqs: Counter[tuple[bytes]],
     pair_to_merge: tuple[bytes, bytes],
-    pair_freqs: Counter[tuple[bytes, bytes]]
+    pair_freqs: Counter[tuple[bytes, bytes]],
+    pair_to_tokens: dict[tuple[bytes, bytes], set[tuple[bytes]]]
 ) -> tuple[Counter[tuple[bytes]], Counter[tuple[bytes, bytes]], dict[tuple[bytes, bytes], set[tuple[bytes]]]]:
     """
     Merge the most frequent pair
@@ -126,13 +142,16 @@ def merge_token_freqs(
     a, b = pair_to_merge
     merged = a + b
 
-    changes = []
+    token_to_process = pair_to_tokens.get(pair_to_merge, set()).copy()
 
-    for token, freq in token_freqs.items():
+    for token in tqdm.tqdm(token_to_process, total=len(token_to_process)):
+        if token not in token_freqs:
+            continue
+        
+        freq = token_freqs[token]
         new_token: list[bytes] = []
 
         i = 0
-        changed = False
         while i < len(token):
             if i < len(token) - 1 and token[i] == a and token[i+1] == b:
                 new_token.append(merged)
@@ -142,27 +161,33 @@ def merge_token_freqs(
                 new_token.append(token[i])
                 i += 1
 
-        if changed:
-            new_token = tuple(new_token)
-            changes.append((token, new_token, freq))
+        new_token = tuple(new_token)
 
-    for token, new_token, freq in changes:
-        del token_freqs[token]
+        token_freqs[token] -= freq
+        if token_freqs[token] <= 0:
+            del token_freqs[token]
         token_freqs[new_token] += freq
 
-        # 1. delete pairs in token
-        for i in range(len(token) - 1):
-            pair = (token[i], token[i+1])
+        # Update pair frequencies and reverse index
+        for l, r in zip(token, token[1:]):
+            pair = (l, r)
             pair_freqs[pair] -= freq
             if pair_freqs[pair] <= 0:
                 del pair_freqs[pair]
-
-        # 2. add pairs in new_token
-        for i in range(len(new_token) - 1):
-            pair = (new_token[i], new_token[i+1])
+            if pair in pair_to_tokens:
+                if token in pair_to_tokens[pair]:
+                    pair_to_tokens[pair].discard(token)
+                if not pair_to_tokens[pair]:
+                    del pair_to_tokens[pair]
+        
+        for l, r in zip(new_token, new_token[1:]):
+            pair = (l, r)
             pair_freqs[pair] += freq
+            if pair not in pair_to_tokens:
+                pair_to_tokens[pair] = set()
+            pair_to_tokens[pair].add(new_token)
 
-    return token_freqs, pair_freqs
+    return token_freqs, pair_freqs, pair_to_tokens
 
 def train_bpe(
     input_path: str,
@@ -178,12 +203,13 @@ def train_bpe(
     merges = []
 
     # Pretokenize input parallelly
-    num_processes = 4
+    num_processes = 16
     token_freqs = parallel_pretokenize_and_count(input_path, special_tokens, num_processes)
     print("Finish pretokenization")
     
     # Build initial data structures
     pair_freqs = get_pair_freqs(token_freqs)
+    pair_to_tokens = build_reverse_index(token_freqs)
     
     print(f"Initial tokens: {len(token_freqs)}, pairs: {len(pair_freqs)}")
     
@@ -192,13 +218,13 @@ def train_bpe(
         if not pair_freqs:
             break
         best_pair = get_most_frequent_pair(pair_freqs)
-        token_freqs, pair_freqs = merge_token_freqs(
-            token_freqs, best_pair, pair_freqs)
+        token_freqs, pair_freqs, pair_to_tokens = merge_token_freqs(
+            token_freqs, best_pair, pair_freqs, pair_to_tokens)
         new_token = best_pair[0] + best_pair[1]
         vocab[len(vocab)] = new_token
         merges.append(best_pair)
 
-        if len(vocab) % 1000 == 0:
+        if len(vocab) % 100 == 0:
             print(f"Vocab size: {len(vocab)}, Active pairs: {len(pair_freqs)}")
 
     return vocab, merges
