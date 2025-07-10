@@ -3,6 +3,9 @@ from multiprocessing import Pool
 from collections import Counter
 from cs336_basics.pretokenization_example import find_chunk_boundaries
 import regex as re
+PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+PRETOKENIZER = re.compile(PAT)
+
 
 def init_vocab(special_tokens: list[str]) -> dict[int, bytes]:
     """
@@ -30,9 +33,6 @@ def split_on_special_tokens(text: str, special_tokens: list[str]) -> list[str]:
     pattern = "|".join(re.escape(token) for token in special_tokens)
     return re.split(pattern, text)
 
-PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
-PRETOKENIZER = re.compile(PAT)
-
 def pretokenize(text: str) -> Iterator[bytes]:
     """
     Use regex of GPT-2 to pretokenize text, return UTF-8 bytes tokens.
@@ -40,11 +40,16 @@ def pretokenize(text: str) -> Iterator[bytes]:
     for match in PRETOKENIZER.finditer(text):
         yield match.group(0).encode("utf-8")
 
-def process_chunk(args: tuple[str, list[str]]) -> Counter[tuple[bytes]]:
+def process_chunk(args) -> Counter[tuple[bytes]]:
     """
     pretokenize a single chunk
     """
-    chunk, special_tokens = args
+    # chunk, special_tokens = args
+    input_path, start, end, special_tokens = args
+    with open(input_path, "rb") as f:
+        f.seek(start)
+        chunk = f.read(end - start).decode("utf-8", errors="ignore")
+
     counter = Counter()
 
     for segment in split_on_special_tokens(chunk, special_tokens):
@@ -57,7 +62,7 @@ def process_chunk(args: tuple[str, list[str]]) -> Counter[tuple[bytes]]:
 def parallel_pretokenize_and_count(
     input_path: str,
     special_tokens: list[str],
-    num_processes: int = 6
+    num_processes: int = 16
 ) -> Counter[tuple[bytes]]:
     """
     Process chunks in a text file parallelly, pretokenize and compute frequency
@@ -69,11 +74,12 @@ def parallel_pretokenize_and_count(
             f, num_processes, split_token_bytes)
         
         # The following is a parallel implementation
-        chunk_args = []
-        for start, end in zip(boundaries[:-1], boundaries[1:]):
-            f.seek(start)
-            chunk = f.read(end - start).decode("utf-8", errors="ignore")
-            chunk_args.append((chunk, special_tokens))
+        # chunk_args = []
+        # for start, end in zip(boundaries[:-1], boundaries[1:]):
+            # f.seek(start)
+            # chunk = f.read(end - start).decode("utf-8", errors="ignore")
+            # chunk_args.append((chunk, special_tokens))
+    chunk_args = [(input_path, start, end, special_tokens) for start, end in zip(boundaries[:-1], boundaries[1:])]
 
     # Run pre-tokenization on your chunk and store the counts for each pre-token
     with Pool(processes=num_processes) as pool:
@@ -172,9 +178,10 @@ def train_bpe(
     merges = []
 
     # Pretokenize input parallelly
-    num_processes = 6
+    num_processes = 4
     token_freqs = parallel_pretokenize_and_count(input_path, special_tokens, num_processes)
-
+    print("Finish pretokenization")
+    
     # Build initial data structures
     pair_freqs = get_pair_freqs(token_freqs)
     
