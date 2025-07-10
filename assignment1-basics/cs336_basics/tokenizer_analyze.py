@@ -36,8 +36,8 @@ def analyze_vocab(vocab_path: str, merges_path: str, top_k: int = 5) -> None:
         print(f" - ID {idx}: {token} (len={len(token)} bytes) → {decoded}")
 
 if __name__ == "__main__":
-    vocab_path = os.path.join("tokenizers", "vocab-owt_valid-v5000-20250626-030104.json")
-    merges_path = os.path.join("tokenizers", "merges-owt_valid-v5000-20250626-030104.txt")
+    vocab_path = os.path.join("tokenizers", "vocab-owt_train-v32000-20250710-181042.json")
+    merges_path = os.path.join("tokenizers", "merges-owt_train-v32000-20250710-181042.txt")
 
     analyze_vocab(
     vocab_path,
