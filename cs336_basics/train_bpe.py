@@ -155,7 +155,6 @@ def merge_token_freqs(
         while i < len(token):
             if i < len(token) - 1 and token[i] == a and token[i+1] == b:
                 new_token.append(merged)
-                changed = True
                 i += 2
             else:
                 new_token.append(token[i])
@@ -225,6 +224,6 @@ def train_bpe(
         merges.append(best_pair)
 
         if len(vocab) % 100 == 0:
-            print(f"Vocab size: {len(vocab)}, Active pairs: {len(pair_freqs)}")
+            print(f"Vocab size: {len(vocab)}, Active pairs: {len(pair_freqs)}, Merges number: {len(merges)}")
 
     return vocab, merges

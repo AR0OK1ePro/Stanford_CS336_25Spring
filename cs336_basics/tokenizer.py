@@ -21,6 +21,35 @@ class Tokenizer:
         # build merge priority map for efficient lookup
         self.merge_ranks = {(first, second): i for i, (first, second) in enumerate(merges)}
 
+    def from_file(self, vocab_filepath, merges_filepath, special_tokens=None):
+        if special_tokens is None:
+            special_tokens = []
+
+        with open(vocab_filepath, "r", encoding="utf-8") as f:
+            vocab_json = json.load(f)
+            vocab = {int(k): v.encode("utf-8", errors="replace") for k, v in vocab_json.items()}
+
+        merges = []
+        with open(merges_filepath, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+            for line in lines:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split()
+                if len(parts) != 2:
+                    continue  # Skip malformed lines
+                a, b = parts
+                merges.append((a.encode("utf-8"), b.encode("utf-8")))
+        
+        self.vocab = vocab
+        self.merges = merges
+        self.special_tokens = special_tokens
+        # build reverse vocab
+        self.reverse_vocab = {value: key for key, value in vocab.items()}
+        # build merge priority map for efficient lookup
+        self.merge_ranks = {(first, second): i for i, (first, second) in enumerate(merges)}
+
     def _pretokenize(self, text: str) -> list[str]:
         # Handle special_tokens first
         if self.special_tokens:
