@@ -42,8 +42,8 @@ if __name__ == "__main__":
     profiler.enable()
 
     vocab, merges = cs336_basics.train_bpe.train_bpe(
-        input_path="data/owt_train.txt",
-        vocab_size=32000,
+        input_path="data/owt_valid.txt",
+        vocab_size=1000,
         special_tokens=["<|endoftext|>"]
     )
 
@@ -51,6 +51,6 @@ if __name__ == "__main__":
     stats = pstats.Stats(profiler).sort_stats("cumtime")
     stats.print_stats(20)
 
-    vocab_path, merges_path = generate_bpe_filenames('owt_train', 32000)
+    vocab_path, merges_path = generate_bpe_filenames('owt_valid', 1000)
 
     save_bpe_model(vocab, merges, vocab_path, merges_path)
