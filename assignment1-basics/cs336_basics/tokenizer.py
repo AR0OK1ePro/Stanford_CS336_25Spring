@@ -48,24 +48,24 @@ class Tokenizer:
             # Split text on special tokens while keeping the delimiters
             parts = re.split(f'({special_pattern})', text)
 
-            # tokens = []
+            tokens = []
             for part in parts:
                 if not part:  # Skip empty strings
                     continue
                 elif part in self.special_tokens:
                     # This is a special token, keep it as-is
-                    # tokens.append(part)
-                    yield part
+                    tokens.append(part)
+                    # yield part
                 else:
                     # This is regular text, apply normal pre-tokenization
                     normal_tokens = self.pretokenizer_pattern.findall(part)
-                    # tokens.extend(normal_tokens)
-                    yield from self.pretokenizer_pattern.findall(part)
-            # return tokens
+                    tokens.extend(normal_tokens)
+                    # yield from self.pretokenizer_pattern.findall(part)
+            return tokens
         
         else:
-            # return re.findall(self.pretokenizer_pattern, text)
-            yield from self.pretokenizer_pattern.findall(text)
+            return re.findall(self.pretokenizer_pattern, text)
+            # yield from self.pretokenizer_pattern.findall(text)
         
     def _get_pairs(self, token_bytes: tuple[bytes]) -> set[tuple[bytes, bytes]]:
         pairs = set()
@@ -118,12 +118,12 @@ class Tokenizer:
     
     def encode(self, text: str) -> list[int]:
         start = time.time()
+        pre_tokens = self._pretokenize(text)
+        print(f"Pretoken number: {len(pre_tokens)}; Unique pretoken number: {len(set(pre_tokens))}")
+        print(f"Pretokenize time: {time.time() - start}")
         token_ids = []
-        # pre_tokens = self._pretokenize(text)
-        # print(f"Pretoken number: {len(pre_tokens)}; Unique pretoken number: {len(set(pre_tokens))}")
-        # print(f"Pretokenize time: {time.time() - start}")
         token_to_ids = {}
-        for token in self._pretokenize(text):
+        for token in pre_tokens:
             if token not in token_to_ids:
                 token_to_ids[token] = self._encode_token(token)
             token_ids.extend(token_to_ids[token])

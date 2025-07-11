@@ -3,6 +3,7 @@ set -e  # 一旦出现错误就终止脚本
 
 # 1. 安装 uv 包管理器
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
 source $HOME/.local/bin/env
 
 # 2. 同步项目依赖
