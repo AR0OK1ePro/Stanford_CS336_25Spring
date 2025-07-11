@@ -1,31 +1,18 @@
-import json
 import os
+from cs336_basics.tokenizer import Tokenizer
 
-def analyze_vocab(vocab_path: str, merges_path: str, top_k: int = 5) -> None:
+def analyze_tokenizer(tokenizer: Tokenizer, top_k: int = 5) -> None:
     """
     Load vocab and merges from files, and print analysis such as:
     - Longest token
     - Top-K longest tokens
     - Vocab and merge sizes
     """
-    # Load vocab.json
-    with open(vocab_path, "r", encoding="utf-8") as vf:
-        vocab_json = json.load(vf)
-    vocab = {int(k): v.encode("utf-8", errors="replace") for k, v in vocab_json.items()}
-
-    # Load merges.txt (skip version line)
-    with open(merges_path, "r", encoding="utf-8") as mf:
-        lines = mf.readlines()
-        merges = [
-            tuple(line.strip().split(" ", 1))
-            for line in lines[1:] if " " in line
-        ]
-
-    print(f"📦 Total vocab size: {len(vocab)}")
-    print(f"🔗 Total merges: {len(merges)}\n")
+    print(f"📦 Total tokenizer.vocab size: {len(tokenizer.vocab)}")
+    print(f"🔗 Total tokenizer.merges: {len(tokenizer.merges)}\n")
 
     # Find longest tokens
-    longest_tokens = sorted(vocab.items(), key=lambda kv: len(kv[1]), reverse=True)[:top_k]
+    longest_tokens = sorted(tokenizer.vocab.items(), key=lambda kv: len(kv[1]), reverse=True)[:top_k]
 
     print(f"🔍 Top {top_k} longest tokens (by byte length):")
     for idx, token in longest_tokens:
@@ -35,12 +22,19 @@ def analyze_vocab(vocab_path: str, merges_path: str, top_k: int = 5) -> None:
             decoded = "<invalid utf-8>"
         print(f" - ID {idx}: {token} (len={len(token)} bytes) → {decoded}")
 
-if __name__ == "__main__":
-    vocab_path = os.path.join("tokenizers", "vocab-owt_train-v32000-20250710-181042.json")
-    merges_path = os.path.join("tokenizers", "merges-owt_train-v32000-20250710-181042.txt")
+def validate_tokenizer(tokenizer: Tokenizer, valid_path: str):
+    for i in range(len(tokenizer.merges)):
+        assert tokenizer.merges[i][0] + tokenizer.merges[i][1] == tokenizer.vocab[i + 257], f"i = {i}, tokenizer.merges[{i}]: {tokenizer.merges[i]}, tokenizer.vocab: {tokenizer.vocab[i + 257]}"
 
-    analyze_vocab(
-    vocab_path,
-    merges_path,
-    top_k=5
-)
+    with open(valid_path, encoding="utf-8") as f:
+        data = f.read()
+    assert data == tokenizer.decode(tokenizer.encode(data))
+
+if __name__ == "__main__":
+    read_path = os.path.join("tokenizers", "tokenizer_readable-TinyStories_train-v10000.pkl")
+    valid_path = os.path.join("data", "TinyStoriesV2-GPT4-valid.txt")
+    tokenizer = Tokenizer(vocab={}, merges=[])
+    tokenizer.from_file(read_path, special_tokens=["<|endoftext|>"])
+        
+    analyze_tokenizer(tokenizer, top_k=5)
+    validate_tokenizer(tokenizer, valid_path)
