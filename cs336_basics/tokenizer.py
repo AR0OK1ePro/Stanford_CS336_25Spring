@@ -1,6 +1,7 @@
 import pickle
 import regex as re
 from collections.abc import Iterable, Iterator
+import time
 
 PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 PRETOKENIZER = re.compile(PAT)
@@ -35,8 +36,8 @@ class Tokenizer:
         self.reverse_vocab = {value: key for key, value in self.vocab.items()}
         # build merge priority map for efficient lookup
         self.merge_ranks = {(first, second): i for i, (first, second) in enumerate(self.merges)}
-
-    def _pretokenize(self, text: str) -> list[str]:
+    
+    def _pretokenize(self, text: str): # -> list[str]:
         # Handle special_tokens first
         if self.special_tokens:
             # Create patterns to match special tokens
@@ -47,22 +48,24 @@ class Tokenizer:
             # Split text on special tokens while keeping the delimiters
             parts = re.split(f'({special_pattern})', text)
 
-            tokens = []
+            # tokens = []
             for part in parts:
                 if not part:  # Skip empty strings
                     continue
                 elif part in self.special_tokens:
                     # This is a special token, keep it as-is
-                    tokens.append(part)
+                    # tokens.append(part)
+                    yield part
                 else:
                     # This is regular text, apply normal pre-tokenization
                     normal_tokens = self.pretokenizer_pattern.findall(part)
-                    tokens.extend(normal_tokens)
-                
-            return tokens
+                    # tokens.extend(normal_tokens)
+                    yield from self.pretokenizer_pattern.findall(part)
+            # return tokens
         
         else:
-            return re.findall(self.pretokenizer_pattern, text)
+            # return re.findall(self.pretokenizer_pattern, text)
+            yield from self.pretokenizer_pattern.findall(text)
         
     def _get_pairs(self, token_bytes: tuple[bytes]) -> set[tuple[bytes, bytes]]:
         pairs = set()
@@ -112,25 +115,30 @@ class Tokenizer:
         merged_token_bytes = self._apply_merges(token)
         token_ids = [self.reverse_vocab[token] for token in merged_token_bytes]
         return token_ids
-
-    def encode(self, text: str) -> list[int]:
-
-        pre_tokens = self._pretokenize(text)
-
-        #print(pre_tokens)
-
-        token_ids = []
-        for token in pre_tokens:
-            token_ids.extend(self._encode_token(token))
-        
-        return token_ids
     
-    def encode_iterable(self, iterable: Iterable[str]) -> Iterator[int]:
-        for text in iterable:
-            pre_tokens = self._pretokenize(text)
+    def encode(self, text: str) -> list[int]:
+        start = time.time()
+        token_ids = []
+        # pre_tokens = self._pretokenize(text)
+        # print(f"Pretoken number: {len(pre_tokens)}; Unique pretoken number: {len(set(pre_tokens))}")
+        # print(f"Pretokenize time: {time.time() - start}")
+        token_to_ids = {}
+        for token in self._pretokenize(text):
+            if token not in token_to_ids:
+                token_to_ids[token] = self._encode_token(token)
+            token_ids.extend(token_to_ids[token])
+        print(f"token_to_ids len: {len(token_to_ids)}")
+        print(f"Encode time: {time.time() - start}")
+        return token_ids
 
-            for token in pre_tokens:
-                token_ids = self._encode_token(token)
+            
+    def encode_iterable(self, iterable: Iterable[str]) -> Iterator[int]:
+        token_to_ids = {}
+        for text in iterable:
+            for token in self._pretokenize(text):
+                if token not in token_to_ids:
+                    token_to_ids[token] = self._encode_token(token)
+                token_ids = token_to_ids[token]
                 yield from token_ids
     
     def decode(self, ids: list[int]) -> str:
