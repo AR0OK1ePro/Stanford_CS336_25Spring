@@ -1,6 +1,7 @@
 import torch
 import math
-import numpy
+import numpy as np
+import os
 from jaxtyping import Float, Int
 from einops import reduce, rearrange, einsum
 from collections.abc import Callable, Iterable
@@ -108,10 +109,18 @@ def gradient_clipping(params: Iterable[torch.nn.Parameter], l2_norm_max: float, 
             g.mul_(scale)
     return params
 
-def data_loading(x: numpy.array, batch_size, context_length, device="mps"):
-    indices = numpy.random.randint(0, len(x) - context_length, size=batch_size)
-    input_sequence = numpy.stack([x[i: i + context_length] for i in indices])
-    output_sequence = numpy.stack([x[i+1: i+1 + context_length] for i in indices])
+def data_loading(x: np.array, batch_size, context_length, single_minibatch=False, device="mps"):
+    if single_minibatch:
+        minibatch_path = "data/single_minibatch.npy"
+        if os.path.exists(minibatch_path):
+            indices = np.load(minibatch_path)
+        else:
+            indices = np.random.randint(0, len(x) - context_length, size=batch_size)
+            np.save(minibatch_path, indices)
+    else:
+        indices = np.random.randint(0, len(x) - context_length, size=batch_size)
+    input_sequence = np.stack([x[i: i + context_length] for i in indices])
+    output_sequence = np.stack([x[i+1: i+1 + context_length] for i in indices])
 
     input_tensor = torch.tensor(input_sequence, dtype=torch.long).to(device=device)
     output_tensor = torch.tensor(output_sequence, dtype=torch.long).to(device=device)

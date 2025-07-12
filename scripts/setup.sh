@@ -25,6 +25,8 @@ wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/
 cd ..
 
 # 7. wandb
-export WANDB_API_KEY=edf6717fa37dbc00ab8b306c9522ec0db48dc4c4
-
 uv run wandb login
+
+# 8. 更新apt
+apt update
+apt  -y install tmux nvtop vim
