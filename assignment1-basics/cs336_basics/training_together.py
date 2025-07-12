@@ -76,9 +76,10 @@ class DataConfig:
 class MemoryMappedDataset:
     """Memory-efficient dataset using numpy memmap."""
     
-    def __init__(self, data_path: str, context_length: int, device: str):
+    def __init__(self, data_path: str, context_length: int, device: str, single_minibatch: bool = False):
         self.context_length = context_length
         self.device = device
+        self.single_minibatch = single_minibatch
         
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found: {data_path}")
@@ -94,7 +95,7 @@ class MemoryMappedDataset:
     
     def get_batch(self, batch_size: int) -> tuple[torch.Tensor, torch.Tensor]:
         """Get a batch of data with random sampling."""
-        return data_loading(self.data, batch_size, self.context_length, device=self.device)
+        return data_loading(self.data, batch_size, self.context_length, self.single_minibatch, device=self.device)
 
 class TrainingLogger:
     """Handles logging to console and optionally to Weights & Biases."""
@@ -294,6 +295,7 @@ def main():
     parser.add_argument("--use_wandb", action="store_true", help="Use Weights & Biases logging")
     parser.add_argument("--wandb_project", type=str, default="transformer-training", help="Wandb project name")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--single_minibatch", action="store_true", help="overfit to a single minibatch")
     
     args = parser.parse_args()
     
@@ -369,12 +371,18 @@ def main():
     # Create model and optimizer
     model = create_model(model_config)
     optimizer = create_optimizer(model, training_config)
+
+    if model_config.device == 'mps':
+        model = torch.compile(model, backend="aot_eager")
+    elif model_config.device == 'cpu':
+        model = torch.compile(model)
     
     # Load datasets
     train_dataset = MemoryMappedDataset(
         data_config.train_data_path, 
         model_config.context_length, 
-        model_config.device
+        model_config.device,
+        args.single_minibatch
     )
     
     val_dataset = None
@@ -431,6 +439,9 @@ def main():
     
     if logger.use_wandb:
         wandb.finish()
+
+    if args.single_minibatch:
+        os.remove("data/single_minibatch.npy")
 
 if __name__ == "__main__":
     main()
