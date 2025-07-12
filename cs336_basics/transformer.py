@@ -239,15 +239,15 @@ def softmax(x: torch.Tensor, i: int):
     return exp_x / exp_x_sum
     
 def scaled_dot_product_attention(
-        query: Float[torch.Tensor, "batch_size ... seq_len d_k"],
-        key: Float[torch.Tensor, "batch_size ... seq_len d_k"],
-        value: Float[torch.Tensor, "batch_size ... seq_len d_v"],
+        query: Float[torch.Tensor, "... seq_len d_k"],
+        key: Float[torch.Tensor, "... seq_len d_k"],
+        value: Float[torch.Tensor, "... seq_len d_v"],
         mask: Bool[torch.Tensor, "seq_len seq_len"] = None 
 ):
     attention = einsum(query, key, "... q d_k, ... k d_k -> ... q k")
     attention /= torch.sqrt(torch.tensor(key.shape[-1], device=key.device, dtype=key.dtype))
     if mask is not None:
-        attention = torch.where(mask.bool(), attention, -float('inf'))
+        attention = torch.where(mask.bool().to(attention.device), attention, -float('inf'))
     
     attention = softmax(attention, -1)
     return einsum(attention, value, "... q k, ... k d_v -> ... q d_v")
@@ -278,11 +278,11 @@ class multihead_self_attention(torch.nn.Module):
         value = self.w_v.forward(x)
 
 
-        query = rearrange(query, "batch_size ... seq_len (h d_k)  -> batch_size ... h seq_len d_k", 
+        query = rearrange(query, "... seq_len (h d_k)  -> ... h seq_len d_k", 
                             h = self.num_heads)
-        key = rearrange(key, "batch_size ... seq_len (h d_k) -> batch_size ... h seq_len d_k", 
+        key = rearrange(key, "... seq_len (h d_k) ->  ... h seq_len d_k", 
                             h = self.num_heads)
-        value = rearrange(value, "batch_size ... seq_len (h d_v) -> batch_size ... h seq_len d_v", 
+        value = rearrange(value, "... seq_len (h d_v) -> ... h seq_len d_v", 
                             h = self.num_heads)
                             
         if self.rope is not None:
@@ -293,7 +293,7 @@ class multihead_self_attention(torch.nn.Module):
 
         attn_out = scaled_dot_product_attention(query, key, value, mask)
 
-        attn_out = rearrange(attn_out, "batch_size ... h seq_len d_v -> batch_size ... seq_len (h d_v)")
+        attn_out = rearrange(attn_out, "... h seq_len d_v -> ... seq_len (h d_v)")
 
         return self.w_o.forward(attn_out)
 
@@ -372,6 +372,10 @@ class transformer_lm(torch.nn.Module):
             dtype (torch.dtype, optional): Data type for parameters.
         """
         super().__init__()
+        self.context_length = context_length
+        self.dtype = dtype
+        self.device = device
+
         self.embedding = Embedding(vocab_size, d_model, device=device, dtype=dtype)
         # Stack of transformer blocks
         self.blocks = torch.nn.ModuleList([
@@ -401,7 +405,7 @@ class transformer_lm(torch.nn.Module):
         # Final RMSNorm and linear projection to vocab size
         logits = self.linear.forward(self.rmsnorm.forward(x))
         # Softmax is applied outside if needed
-        result = softmax(logits, -1)
+        # result = softmax(logits, -1)
 
         return logits
 

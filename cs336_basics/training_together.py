@@ -99,7 +99,7 @@ class MemoryMappedDataset:
 class TrainingLogger:
     """Handles logging to console and optionally to Weights & Biases."""
     
-    def __init__(self, config: Dict[str, Any], use_wandb: bool = False, project_name: str = "transformer-training"):
+    def __init__(self, config: Dict[str, Any], use_wandb: bool = False, project_name: str = "CS336_assignment1"):
         self.use_wandb = use_wandb and HAS_WANDB
         
         if self.use_wandb:
@@ -251,7 +251,7 @@ def train_step(model: transformer_lm, optimizer, dataset: MemoryMappedDataset,
     }
 
 def main():
-    parser = argparse.ArgumentParser(description="Train transformer language model")
+    parser = argparse.ArgumentParser(description="Train transformer language model", fromfile_prefix_chars='@')
     
     # Model configuration
     parser.add_argument("--d_model", type=int, default=512, help="Model dimension")
@@ -268,6 +268,9 @@ def main():
     parser.add_argument("--weight_decay", type=float, default=0.01, help="Weight decay")
     parser.add_argument("--max_grad_norm", type=float, default=1.0, help="Gradient clipping norm")
     parser.add_argument("--optimizer", type=str, default="adamw", choices=["adamw", "sgd"], help="Optimizer")
+    parser.add_argument("--beta1", type=float, default=0.9, help="AdamW beta1")
+    parser.add_argument("--beta2", type=float, default=0.999, help="AdamW beta2")
+    parser.add_argument("--eps", type=float, default=1e-1, help="AdamW eps")
     parser.add_argument("--lr_schedule", type=str, default="cosine", choices=["cosine", "constant", "linear"], help="Learning rate schedule")
     parser.add_argument("--lr_warmup_steps", type=int, default=1000, help="Warmup steps")
     parser.add_argument("--lr_decay_steps", type=int, default=100000, help="Decay steps")
@@ -328,6 +331,9 @@ def main():
         weight_decay=args.weight_decay,
         max_grad_norm=args.max_grad_norm,
         optimizer=args.optimizer,
+        beta1=args.beta1,
+        beta2=args.beta2,
+        eps=args.eps,
         lr_schedule=args.lr_schedule,
         lr_warmup_steps=args.lr_warmup_steps,
         lr_decay_steps=args.lr_decay_steps,
@@ -345,7 +351,7 @@ def main():
     
     # Create checkpoint directory
     checkpoint_dir = Path(args.checkpoint_dir)
-    checkpoint_dir.mkdir(exist_ok=True)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
     
     # Save configuration
     config_dict = {
