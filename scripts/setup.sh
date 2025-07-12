@@ -23,3 +23,8 @@ wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/
 
 # 6. 回到上一级目录
 cd ..
+
+# 7. wandb
+export WANDB_API_KEY=edf6717fa37dbc00ab8b306c9522ec0db48dc4c4
+
+uv run wandb login
