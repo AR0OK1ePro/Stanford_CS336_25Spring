@@ -18,8 +18,8 @@ cd data
 # 5. 下载数据文件
 wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/owt_train.npy
 wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/owt_valid.npy
-wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/TinyStoriesV2-GPT4_train.npy
-wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/TinyStoriesV2-GPT4_valid.npy
+wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/TinyStoriesV2-GPT4-train.npy
+wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/TinyStoriesV2-GPT4-valid.npy
 
 # 6. 回到上一级目录
 cd ..
