@@ -117,18 +117,18 @@ class Tokenizer:
         return token_ids
     
     def encode(self, text: str) -> list[int]:
-        start = time.time()
+        # start = time.time()
         pre_tokens = self._pretokenize(text)
-        print(f"Pretoken number: {len(pre_tokens)}; Unique pretoken number: {len(set(pre_tokens))}")
-        print(f"Pretokenize time: {time.time() - start}")
+        # print(f"Pretoken number: {len(pre_tokens)}; Unique pretoken number: {len(set(pre_tokens))}")
+        # print(f"Pretokenize time: {time.time() - start}")
         token_ids = []
         token_to_ids = {}
         for token in pre_tokens:
             if token not in token_to_ids:
                 token_to_ids[token] = self._encode_token(token)
             token_ids.extend(token_to_ids[token])
-        print(f"token_to_ids len: {len(token_to_ids)}")
-        print(f"Encode time: {time.time() - start}")
+        # print(f"token_to_ids len: {len(token_to_ids)}")
+        # print(f"Encode time: {time.time() - start}")
         return token_ids
 
             
