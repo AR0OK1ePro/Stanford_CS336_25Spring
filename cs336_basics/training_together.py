@@ -100,11 +100,11 @@ class MemoryMappedDataset:
 class TrainingLogger:
     """Handles logging to console and optionally to Weights & Biases."""
     
-    def __init__(self, config: Dict[str, Any], use_wandb: bool = False, project_name: str = "CS336_assignment1"):
+    def __init__(self, config: Dict[str, Any], use_wandb: bool, project_name: str, run_name: str):
         self.use_wandb = use_wandb and HAS_WANDB
         
         if self.use_wandb:
-            wandb.init(project=project_name, config=config)
+            wandb.init(project=project_name, config=config, name=run_name)
         
         # Setup console logging
         logging.basicConfig(
@@ -191,7 +191,7 @@ def create_optimizer(model: torch.nn.Module, config: TrainingConfig):
         raise ValueError(f"Unknown optimizer: {config.optimizer}")
 
 def evaluate_model(model: transformer_lm, dataset: MemoryMappedDataset, 
-                  config: TrainingConfig, num_batches: int = 10) -> Dict[str, float]:
+                  config: TrainingConfig, num_batches: int = 3) -> Dict[str, float]:
     """Evaluate the model on validation data."""
     model.eval()
     total_loss = 0.0
@@ -293,7 +293,8 @@ def main():
     parser.add_argument("--device", type=str, default="auto", help="Device (cuda/cpu/auto)")
     parser.add_argument("--dtype", type=str, default="float32", choices=["float32", "float16", "bfloat16"], help="Data type")
     parser.add_argument("--use_wandb", action="store_true", help="Use Weights & Biases logging")
-    parser.add_argument("--wandb_project", type=str, default="transformer-training", help="Wandb project name")
+    parser.add_argument("--wandb_project", type=str, default="CS336_assignment1", help="Wandb project name")
+    parser.add_argument("--wandb_run", type=str, default="CS336_assignment1_run", help="Wandb run name")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--single_minibatch", action="store_true", help="overfit to a single minibatch")
     
@@ -366,7 +367,7 @@ def main():
         json.dump(config_dict, f, indent=2)
     
     # Initialize logging
-    logger = TrainingLogger(config_dict, args.use_wandb, args.wandb_project)
+    logger = TrainingLogger(config_dict, args.use_wandb, args.wandb_project, args.wandb_run)
     
     # Create model and optimizer
     model = create_model(model_config)
