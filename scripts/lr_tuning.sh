@@ -3,7 +3,9 @@
 # 超参数列表
 # learning_rates=(1e-1 5e-2 1e-2 5e-3 1e-3)
 
-lr=1e-1
+lr=1.5e-2
+warmup=1600
+batch_size=64
 
 echo "Training with learning_rate = $lr"
 
@@ -15,9 +17,9 @@ uv run cs336_basics/training_together.py \
   --num_layers 4 \
   --context_length 256 \
   --theta 10000 \
-  --batch_size 64 \
+  --batch_size $batch_size \
   --max_steps 20000 \
-  --lr_warmup_steps 500 \
+  --lr_warmup_steps $warmup \
   --lr_decay_steps 20000 \
   --learning_rate $lr \
   --optimizer adamw \
@@ -31,5 +33,5 @@ uv run cs336_basics/training_together.py \
   --dtype float32 \
   --use_wandb \
   --wandb_project "CS336_assignment1" \
-  --wandb_run "lr:${lr} bs:64 steps:20k" \
+  --wandb_run "lr:${lr} bs:${batch_size} warmup:${warmup}" \
   "$@"
