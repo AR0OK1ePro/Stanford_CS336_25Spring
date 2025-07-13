@@ -31,9 +31,9 @@ def decoding(tokenizer: Tokenizer, lm: transformer_lm, prompt: str,
 
     in_tokens = tokenizer.encode(prompt)
     out_tokens = []
-    end_token_num = tokenizer.reverse_vocab[tokenizer.special_tokens[0].encode("utf-8")]
+    end_token_idx = tokenizer.reverse_vocab[tokenizer.special_tokens[0].encode("utf-8")]
 
-    while end_token_num not in out_tokens and len(out_tokens) < max_tokens:
+    while end_token_idx not in out_tokens and len(out_tokens) < max_tokens:
         print(f"Response length: {len(out_tokens)}")
         logits = lm.forward(torch.tensor(in_tokens + out_tokens, device=lm.device))
         p_dist = softmax(logits[-1] / t, -1)
@@ -53,10 +53,10 @@ if __name__ == "__main__":
     lm = transformer_lm(d_model=512, num_heads=16, d_ff=1344, vocab_size=10000, 
                         num_layers=4, context_length=256, theta=1000, device="mps", dtype=torch.float32)
 
-    lm.load_state_dict(torch.load("checkpoints/TinyStories_LM_lr_3e-4/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
+    lm.load_state_dict(torch.load("checkpoints/TinyStories_LM/lr_1e-1/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
     lm = torch.compile(lm, backend="aot_eager")
 
     prompt = "Once upon a time"
 
-    response = decoding(tinystories_tokenizer, lm, prompt, 10, 0.3, 0.8)
-    print(response)
+    response = decoding(tinystories_tokenizer, lm, prompt, 100, 0.3, 0.8)
+    print(prompt + response)

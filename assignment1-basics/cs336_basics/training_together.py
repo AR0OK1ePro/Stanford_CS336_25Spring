@@ -374,6 +374,7 @@ def main():
 
     if model_config.device == 'cuda':
         model = torch.compile(model)
+        torch.set_float32_matmul_precision('high')
     elif model_config.device == 'mps':
         model = torch.compile(model, backend="aot_eager")
     elif model_config.device == 'cpu':
