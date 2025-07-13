@@ -76,12 +76,6 @@ def parallel_pretokenize_and_count(
         boundaries = find_chunk_boundaries(
             f, num_processes, split_token_bytes)
         
-        # The following is a parallel implementation
-        # chunk_args = []
-        # for start, end in zip(boundaries[:-1], boundaries[1:]):
-            # f.seek(start)
-            # chunk = f.read(end - start).decode("utf-8", errors="ignore")
-            # chunk_args.append((chunk, special_tokens))
     chunk_args = [(input_path, start, end, special_tokens) for start, end in zip(boundaries[:-1], boundaries[1:])]
     print("Number of chunks: ", len(chunk_args))
 
@@ -168,8 +162,8 @@ def merge_token_freqs(
         token_freqs[new_token] += freq
 
         # Update pair frequencies and reverse index
-        for l, r in zip(token, token[1:]):
-            pair = (l, r)
+        for left, right in zip(token, token[1:]):
+            pair = (left, right)
             pair_freqs[pair] -= freq
             if pair_freqs[pair] <= 0:
                 del pair_freqs[pair]
@@ -179,8 +173,8 @@ def merge_token_freqs(
                 if not pair_to_tokens[pair]:
                     del pair_to_tokens[pair]
         
-        for l, r in zip(new_token, new_token[1:]):
-            pair = (l, r)
+        for left, right in zip(new_token, new_token[1:]):
+            pair = (left, right)
             pair_freqs[pair] += freq
             if pair not in pair_to_tokens:
                 pair_to_tokens[pair] = set()

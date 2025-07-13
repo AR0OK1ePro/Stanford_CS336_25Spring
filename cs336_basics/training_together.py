@@ -12,10 +12,9 @@ import time
 import math
 import numpy as np
 import torch
-import torch.distributed as dist
 from pathlib import Path
 from dataclasses import dataclass, asdict
-from typing import Optional, Dict, Any
+from typing import Any
 import logging
 
 # Import our custom modules
@@ -100,7 +99,7 @@ class MemoryMappedDataset:
 class TrainingLogger:
     """Handles logging to console and optionally to Weights & Biases."""
     
-    def __init__(self, config: Dict[str, Any], use_wandb: bool, project_name: str, run_name: str):
+    def __init__(self, config: dict[str, Any], use_wandb: bool, project_name: str, run_name: str):
         self.use_wandb = use_wandb and HAS_WANDB
         
         if self.use_wandb:
@@ -117,7 +116,7 @@ class TrainingLogger:
         )
         self.logger = logging.getLogger(__name__)
     
-    def log_metrics(self, metrics: Dict[str, float], step: int):
+    def log_metrics(self, metrics: dict[str, float], step: int):
         """Log metrics to console and wandb."""
         # Console logging
         metric_str = " | ".join([f"{k}: {v:.6f}" for k, v in metrics.items()])
@@ -191,7 +190,7 @@ def create_optimizer(model: torch.nn.Module, config: TrainingConfig):
         raise ValueError(f"Unknown optimizer: {config.optimizer}")
 
 def evaluate_model(model: transformer_lm, dataset: MemoryMappedDataset, 
-                  config: TrainingConfig, num_batches: int = 3) -> Dict[str, float]:
+                  config: TrainingConfig, num_batches: int = 3) -> dict[str, float]:
     """Evaluate the model on validation data."""
     model.eval()
     total_loss = 0.0
@@ -213,7 +212,7 @@ def evaluate_model(model: transformer_lm, dataset: MemoryMappedDataset,
     return {"val_loss": avg_loss, "val_perplexity": perplexity}
 
 def train_step(model: transformer_lm, optimizer, dataset: MemoryMappedDataset, 
-               config: TrainingConfig, step: int) -> Dict[str, float]:
+               config: TrainingConfig, step: int) -> dict[str, float]:
     """Perform a single training step."""
     model.train()
     total_loss = 0.0
@@ -373,7 +372,9 @@ def main():
     model = create_model(model_config)
     optimizer = create_optimizer(model, training_config)
 
-    if model_config.device == 'mps':
+    if model_config.device == 'cuda':
+        model = torch.compile(model)
+    elif model_config.device == 'mps':
         model = torch.compile(model, backend="aot_eager")
     elif model_config.device == 'cpu':
         model = torch.compile(model)

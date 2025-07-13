@@ -3,7 +3,7 @@ import math
 import numpy as np
 import os
 from jaxtyping import Float, Int
-from einops import reduce, rearrange, einsum
+from einops import reduce
 from collections.abc import Callable, Iterable
 from typing import Optional
 
@@ -119,11 +119,17 @@ def data_loading(x: np.array, batch_size, context_length, single_minibatch=False
             np.save(minibatch_path, indices)
     else:
         indices = np.random.randint(0, len(x) - context_length, size=batch_size)
-    input_sequence = np.stack([x[i: i + context_length] for i in indices])
-    output_sequence = np.stack([x[i+1: i+1 + context_length] for i in indices])
 
-    input_tensor = torch.tensor(input_sequence, dtype=torch.long).to(device=device)
-    output_tensor = torch.tensor(output_sequence, dtype=torch.long).to(device=device)
+    # Efficiently create batches using broadcasting
+    offsets = np.arange(context_length)
+    input_indices = indices[:, np.newaxis] + offsets
+
+    input_sequence = x[input_indices]
+    output_sequence = x[input_indices + 1]
+
+    # Use torch.from_numpy to avoid a copy
+    input_tensor = torch.from_numpy(input_sequence).to(device=device, dtype=torch.long)
+    output_tensor = torch.from_numpy(output_sequence).to(device=device, dtype=torch.long)
     return input_tensor, output_tensor
 
 def save_checkpoint(model: torch.nn.Module, optimizer: torch.optim.Optimizer, iteration, out):

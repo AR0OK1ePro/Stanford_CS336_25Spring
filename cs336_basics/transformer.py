@@ -1,5 +1,4 @@
 import torch
-import math
 from jaxtyping import Float, Bool
 from einops import rearrange, reduce, einsum
 
@@ -93,7 +92,7 @@ class RMSNorm(torch.nn.Module):
             dtype (torch.dtype, optional): The desired data type of the parameters.
         """
         super().__init__()
-        self.gain: Float[torch.Tensor, "d_model"] = torch.nn.Parameter(
+        self.gain: Float[torch.Tensor, d_model] = torch.nn.Parameter(
             torch.ones(d_model, device=device, dtype=dtype)
         )
         self.eps = eps
