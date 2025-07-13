@@ -10,7 +10,7 @@ uv run cs336_basics/training_together.py \
   --theta 10000 \
   --batch_size 32 \
   --max_steps 40000 \
-  --lr_warmup_steps 1000 \
+  --lr_warmup_steps 2000 \
   --lr_decay_steps 40000 \
   --learning_rate 1e-1 \
   --optimizer adamw \
@@ -18,7 +18,7 @@ uv run cs336_basics/training_together.py \
   --val_data "data/TinyStoriesV2-GPT4-valid.npy" \
   --checkpoint_dir "checkpoints/TinyStories_LM" \
   --log_interval 50 \
-  --eval_interval 500 \
+  --eval_interval 50 \
   --save_interval 2000 \
   --device auto \
   --dtype float32 \

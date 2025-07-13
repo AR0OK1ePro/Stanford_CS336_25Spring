@@ -16,7 +16,7 @@ uv run cs336_basics/training_together.py \
   --optimizer adamw \
   --train_data "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data "data/TinyStoriesV2-GPT4-valid.npy" \
-  --checkpoint_dir "checkpoints/TinyStories_LM" \
+  --checkpoint_dir "checkpoints/single_minibatch" \
   --log_interval 10 \
   --eval_interval 20000 \
   --save_interval 20000 \

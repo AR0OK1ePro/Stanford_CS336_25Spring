@@ -50,10 +50,13 @@ if __name__ == "__main__":
     tinystories_tokenizer = Tokenizer(vocab={}, merges=[])
     tinystories_tokenizer.from_file(tinystories_read_path, special_tokens=["<|endoftext|>"])
 
-    lm = transformer_lm(d_model=4, num_heads=2, d_ff=16, vocab_size=10000, 
-                        num_layers=1, context_length=128, theta=1000, device="mps", dtype=torch.float32)
-    
-    prompt = "Hello world"
+    lm = transformer_lm(d_model=512, num_heads=16, d_ff=1344, vocab_size=10000, 
+                        num_layers=4, context_length=256, theta=1000, device="mps", dtype=torch.float32)
+
+    lm.load_state_dict(torch.load("checkpoints/TinyStories_LM_lr_3e-4/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
+    lm = torch.compile(lm, backend="aot_eager")
+
+    prompt = "Once upon a time"
 
     response = decoding(tinystories_tokenizer, lm, prompt, 10, 0.3, 0.8)
     print(response)
