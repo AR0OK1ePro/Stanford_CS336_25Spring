@@ -4,7 +4,7 @@ from cs336_basics.tokenizer import Tokenizer
 from cs336_basics.transformer import transformer_lm, softmax
 from jaxtyping import Float
 
-def nucleus(p_dist: Float[torch.Tensor, "vocab_size"], alpha: float) -> torch.Tensor:
+def nucleus(p_dist: Float[torch.Tensor, "..."], alpha: float) -> torch.Tensor:
     sorted_values, sorted_indices = torch.sort(p_dist, descending=True)
     accumulated_p = 0
     

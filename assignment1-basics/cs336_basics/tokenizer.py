@@ -1,7 +1,6 @@
 import pickle
 import regex as re
 from collections.abc import Iterable, Iterator
-import time
 
 PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 PRETOKENIZER = re.compile(PAT)
