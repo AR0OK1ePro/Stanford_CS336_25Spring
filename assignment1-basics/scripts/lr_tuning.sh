@@ -26,8 +26,8 @@ uv run cs336_basics/training_together.py \
   --train_data "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data "data/TinyStoriesV2-GPT4-valid.npy" \
   --checkpoint_dir "checkpoints/TinyStories_LM/lr_${lr}" \
-  --log_interval 50 \
-  --eval_interval 50 \
+  --log_interval 10 \
+  --eval_interval 10 \
   --save_interval 1000 \
   --device auto \
   --dtype float32 \

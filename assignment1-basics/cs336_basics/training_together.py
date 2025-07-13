@@ -190,7 +190,7 @@ def create_optimizer(model: torch.nn.Module, config: TrainingConfig):
         raise ValueError(f"Unknown optimizer: {config.optimizer}")
 
 def evaluate_model(model: transformer_lm, dataset: MemoryMappedDataset, 
-                  config: TrainingConfig, num_batches: int = 3) -> dict[str, float]:
+                  config: TrainingConfig, num_batches: int = 10) -> dict[str, float]:
     """Evaluate the model on validation data."""
     model.eval()
     total_loss = 0.0
