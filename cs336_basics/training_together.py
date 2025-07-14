@@ -269,6 +269,8 @@ def train():
             if val_dataset and step > 0 and step % training_config.eval_interval == 0:
                 val_metrics = evaluate_model(model, val_dataset, training_config)
                 logger.log_metrics(val_metrics, step)
+                if val_metrics['value_loss'] < 1.45:
+                    break
             
             if step > 0 and step % training_config.save_interval == 0:
                 checkpoint_path = checkpoint_dir / f"checkpoint_{step}.pt"
@@ -309,9 +311,9 @@ def main():
         return sweep_parameters
 
     sweep_config = {
-        'method': "bayes",
+        'method': "grid",
         'metric': {'name': 'val_loss', 'goal': 'minimize'},
-        'parameters': args_to_sweep_parameters(args, {"learning_rate": {"max": 1e-1, "min": 1e-5}})
+        'parameters': args_to_sweep_parameters(args, {"learning_rate": {"values": [1e-3, 3e-3, 5e-3, 1e-2]}})
     }
 
     sweep_id = wandb.sweep(sweep_config, project=args.wandb_project)
