@@ -110,9 +110,9 @@ class RMSNorm(torch.nn.Module):
         in_dtype = x.dtype
         x = x.to(torch.float32)
         # Compute the inverse root mean square for normalization
-        RMS_reverse = 1 / (reduce(x**2, "... d_model -> ...", "mean") + self.eps).sqrt()
-        # Apply normalization and gain using einsum for correct broadcasting
-        result = einsum(x * self.gain, RMS_reverse, "... d_model, ... -> ... d_model")
+        RMS_x = torch.sqrt(x.pow(2).mean(dim=-1, keepdim=True) + self.eps)
+        # Apply normalization and gain
+        result = x / RMS_x * self.gain
         return result.to(in_dtype)
 
 def SiLU(x: torch.Tensor) -> torch.Tensor:

@@ -12,7 +12,7 @@ uv run cs336_basics/training_together.py \
   --max_steps 40000 \
   --lr_warmup_steps 2000 \
   --lr_decay_steps 40000 \
-  --learning_rate 1e-1 \
+  --learning_rate 3e-4 \
   --optimizer adamw \
   --train_data "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data "data/TinyStoriesV2-GPT4-valid.npy" \
