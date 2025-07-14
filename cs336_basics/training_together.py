@@ -270,7 +270,7 @@ def main():
     parser.add_argument("--optimizer", type=str, default="adamw", choices=["adamw", "sgd"], help="Optimizer")
     parser.add_argument("--beta1", type=float, default=0.9, help="AdamW beta1")
     parser.add_argument("--beta2", type=float, default=0.999, help="AdamW beta2")
-    parser.add_argument("--eps", type=float, default=1e-1, help="AdamW eps")
+    parser.add_argument("--eps", type=float, default=1e-8, help="AdamW eps")
     parser.add_argument("--lr_schedule", type=str, default="cosine", choices=["cosine", "constant", "linear"], help="Learning rate schedule")
     parser.add_argument("--lr_warmup_steps", type=int, default=1000, help="Warmup steps")
     parser.add_argument("--lr_decay_steps", type=int, default=100000, help="Decay steps")
