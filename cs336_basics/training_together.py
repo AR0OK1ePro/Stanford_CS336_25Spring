@@ -7,14 +7,12 @@ Supports configurable hyperparameters, efficient data loading, checkpointing, an
 import os
 import sys
 import argparse
-import json
 import time
 import math
 import numpy as np
 import torch
 from pathlib import Path
-from dataclasses import dataclass, asdict
-from typing import Any
+from dataclasses import dataclass
 import logging
 import contextlib
 
@@ -29,6 +27,7 @@ from cs336_basics.train_transformer import (
 try:
     import wandb
     HAS_WANDB = True
+    wandb.login()
 except ImportError:
     HAS_WANDB = False
     print("Warning: wandb not installed. Logging to console only.")
@@ -98,8 +97,7 @@ class MemoryMappedDataset:
 
 class TrainingLogger:
     """Handles logging to console and optionally to an active Weights & Biases run."""
-    def __init__(self, use_wandb: bool):
-        self.use_wandb = use_wandb and HAS_WANDB
+    def __init__(self):
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
@@ -110,7 +108,7 @@ class TrainingLogger:
     def log_metrics(self, metrics: dict[str, float], step: int):
         metric_str = " | ".join([f"{k}: {v:.6f}" for k, v in metrics.items()])
         self.logger.info(f"Step {step} | {metric_str}")
-        if self.use_wandb and wandb.run:
+        if wandb.run:
             wandb.log(metrics, step=step)
     
     def log_info(self, message: str):
@@ -191,15 +189,11 @@ def train_step(model: transformer_lm, optimizer, dataset: MemoryMappedDataset, c
     optimizer.zero_grad()
     return {"train_loss": total_loss, "learning_rate": current_lr, "step": step}
 
-def train(args):
+def train():
     """Main training function, compatible with wandb sweeps."""
     
-    context_manager = dummy_context_manager()
-    if HAS_WANDB and args.use_wandb:
-        context_manager = wandb.init(project=args.wandb_project, config=args)
-
-    with context_manager as run:
-        config = run.config if (HAS_WANDB and args.use_wandb) else args
+    with wandb.init(project="CS336_assignment1") as run:
+        config = run.config
 
         torch.manual_seed(config.seed)
         np.random.seed(config.seed)
@@ -228,7 +222,7 @@ def train(args):
             checkpoint_dir=config.checkpoint_dir
         )
         
-        data_config = DataConfig(train_data_path=config.train_data, val_data_path=config.val_data)
+        data_config = DataConfig(train_data_path=config.train_data_path, val_data_path=config.val_data_path)
         
         # Create a unique checkpoint directory for each sweep run
         if config.resume_from:
@@ -237,7 +231,7 @@ def train(args):
             checkpoint_dir = Path(training_config.checkpoint_dir) / run.name
         checkpoint_dir.mkdir(parents=True, exist_ok=True)
         
-        logger = TrainingLogger(use_wandb=config.use_wandb)
+        logger = TrainingLogger()
         
         model = create_model(model_config)
         optimizer = create_optimizer(model, training_config)
@@ -295,37 +289,35 @@ def train(args):
 def main():
     parser = argparse.ArgumentParser(description="Train transformer language model", fromfile_prefix_chars='@')
     
-    # General arguments
-    parser.add_argument("--use_wandb", action="store_true", help="Use Weights & Biases logging")
-    parser.add_argument("--wandb_project", type=str, default="CS336_assignment1", help="Wandb project name")
-    parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--single_minibatch", action="store_true", help="Overfit to a single minibatch")
-    parser.add_argument("--resume_from", type=str, default=None, help="Resume training from checkpoint")
-
     # Add arguments for all configs
     for config_class in [ModelConfig, TrainingConfig, DataConfig]:
         for field_name, field_type in config_class.__annotations__.items():
             default_value = getattr(config_class(), field_name)
             parser.add_argument(f"--{field_name}", type=field_type, default=default_value)
 
-    # Sweep arguments
-    parser.add_argument("--sweep", action="store_true", help="Run a wandb sweep")
+    # General arguments
+    parser.add_argument("--wandb_project", type=str, default="CS336_assignment1", help="Wandb project name")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--single_minibatch", action="store_true", help="Overfit to a single minibatch")
+    parser.add_argument("--resume_from", type=str, default=None, help="Resume training from checkpoint")
 
     args = parser.parse_args()
 
-    if args.sweep:
-        sweep_config = {
-            'method': "grid",
-            'metric': {'name': 'val_loss', 'goal': 'minimize'},
-            'parameters': {
-                "learning_rate": {"values": [1e-4, 5e-4, 1e-3, 5e-3, 1e-2, 5e-2, 1e-1]}
-            }
-        }
+    def args_to_sweep_parameters(args, sweep_overrides):
+        sweep_parameters = {k: {"value": v} for k, v in vars(args).items()}
+        sweep_parameters.update(sweep_overrides)
+        return sweep_parameters
 
-        sweep_id = wandb.sweep(sweep_config, project=args.wandb_project)
-        wandb.agent(sweep_id, function=train, count=7)
-    else:
-        train(args)
+    sweep_config = {
+        'method': "grid",
+        'metric': {'name': 'val_loss', 'goal': 'minimize'},
+        'parameters': args_to_sweep_parameters(args, {
+            "learning_rate": {"values": [5e-4, 1e-3, 5e-3, 1e-2, 5e-2, 1e-1]}
+        })
+    }
+
+    sweep_id = wandb.sweep(sweep_config, project=args.wandb_project)
+    wandb.agent(sweep_id, function=train)
 
 if __name__ == "__main__":
     main()

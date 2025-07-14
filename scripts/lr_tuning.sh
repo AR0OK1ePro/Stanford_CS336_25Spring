@@ -20,6 +20,3 @@ uv run cs336_basics/training_together.py \
   --checkpoint_dir "checkpoints/TinyStories_LM" \
   --train_data_path "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data_path "data/TinyStoriesV2-GPT4-valid.npy" \
-  --use_wandb \
-  --wandb_project "CS336_assignment1" \
-  --sweep \
