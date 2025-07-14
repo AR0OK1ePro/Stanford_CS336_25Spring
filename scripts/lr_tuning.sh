@@ -16,7 +16,7 @@ uv run cs336_basics/training_together.py \
   --max_steps 20000 \
   --log_interval 10 \
   --eval_interval 10 \
-  --save_interval 1000 \
+  --save_interval 5000 \
   --checkpoint_dir "checkpoints/TinyStories_LM" \
   --train_data_path "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data_path "data/TinyStoriesV2-GPT4-valid.npy" \

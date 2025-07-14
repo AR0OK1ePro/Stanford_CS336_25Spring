@@ -309,15 +309,13 @@ def main():
         return sweep_parameters
 
     sweep_config = {
-        'method': "grid",
+        'method': "bayes",
         'metric': {'name': 'val_loss', 'goal': 'minimize'},
-        'parameters': args_to_sweep_parameters(args, {
-            "learning_rate": {"values": [5e-4, 1e-3, 5e-3, 1e-2, 5e-2, 1e-1]}
-        })
+        'parameters': args_to_sweep_parameters(args, {"learning_rate": {"max": 1e-1, "min": 1e-5}})
     }
 
     sweep_id = wandb.sweep(sweep_config, project=args.wandb_project)
-    wandb.agent(sweep_id, function=train)
+    wandb.agent(sweep_id, function=train, count=10)
 
 if __name__ == "__main__":
     main()
