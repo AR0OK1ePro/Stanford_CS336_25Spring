@@ -18,12 +18,8 @@ uv run cs336_basics/training_together.py \
   --eval_interval 10 \
   --save_interval 1000 \
   --checkpoint_dir "checkpoints/TinyStories_LM" \
-  --train_data "data/TinyStoriesV2-GPT4-train.npy" \
-  --val_data "data/TinyStoriesV2-GPT4-valid.npy" \
+  --train_data_path "data/TinyStoriesV2-GPT4-train.npy" \
+  --val_data_path "data/TinyStoriesV2-GPT4-valid.npy" \
   --use_wandb \
   --wandb_project "CS336_assignment1" \
   --sweep \
-  --sweep_method grid \
-  --sweep_runs 5 \
-    --sweep_param "learning_rate,log_uniform_values,1e-5,1e-2" \ \
-  "$@"

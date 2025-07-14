@@ -310,43 +310,20 @@ def main():
 
     # Sweep arguments
     parser.add_argument("--sweep", action="store_true", help="Run a wandb sweep")
-    parser.add_argument("--sweep_method", type=str, default="random", choices=["random", "grid", "bayes"], help="Wandb sweep method")
-    parser.add_argument("--sweep_runs", type=int, default=10, help="Number of wandb sweep runs")
-    parser.add_argument("--sweep_param", action="append", help="Define a hyperparameter to sweep over. Format: 'name,type,val1,val2,...' e.g., 'learning_rate,log_uniform_values,1e-5,1e-3' or 'num_layers,values,4,6,8'")
 
     args = parser.parse_args()
 
     if args.sweep:
-        sweep_parameters = {}
-        if args.sweep_param:
-            for param_str in args.sweep_param:
-                parts = param_str.split(',')
-                name = parts[0]
-                dist_type = parts[1]
-                values = [float(v) if '.' in v or 'e' in v else int(v) for v in parts[2:]]
-                
-                param_dict = {"distribution": dist_type}
-                if dist_type in ["uniform", "log_uniform_values"]:
-                    param_dict['min'] = values[0]
-                    param_dict['max'] = values[1]
-                elif dist_type == "values":
-                    param_dict['values'] = values
-                else:
-                    raise ValueError(f"Unsupported distribution type: {dist_type}")
-                sweep_parameters[name] = param_dict
-
         sweep_config = {
-            'method': args.sweep_method,
+            'method': "grid",
             'metric': {'name': 'val_loss', 'goal': 'minimize'},
-            'parameters': sweep_parameters
+            'parameters': {
+                "learning_rate": {"values": [1e-4, 5e-4, 1e-3, 5e-3, 1e-2, 5e-2, 1e-1]}
+            }
         }
-        
-        if not sweep_parameters:
-            print("Error: --sweep was specified but no --sweep_param was provided.")
-            sys.exit(1)
 
         sweep_id = wandb.sweep(sweep_config, project=args.wandb_project)
-        wandb.agent(sweep_id, lambda: train(args), count=args.sweep_runs)
+        wandb.agent(sweep_id, function=train, count=7)
     else:
         train(args)
 
