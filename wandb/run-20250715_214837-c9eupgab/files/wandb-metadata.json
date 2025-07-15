@@ -1,0 +1,55 @@
+{
+    "os": "macOS-15.5-arm64-arm-64bit-Mach-O",
+    "python": "CPython 3.13.4",
+    "heartbeatAt": "2025-07-15T13:48:38.123632",
+    "startedAt": "2025-07-15T13:48:37.393371",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "/var/folders/p_/7j14hy517318d_2_dlkd7f3w0000gn/T/tmpk6yfvy4n/port-3469.txt",
+        "--pid",
+        "3469"
+    ],
+    "state": "running",
+    "program": "/Users/xiaoyan/projects/CS336/assignment1-basics/./cs336_basics/main.py",
+    "codePathLocal": "cs336_basics/main.py",
+    "codePath": "assignment1-basics/cs336_basics/main.py",
+    "git": {
+        "remote": "https://github.com/AR0OK1ePro/Stanford_CS336_25Spring.git",
+        "commit": "7614e8377dd29a8588f18e76b80dafc16cd6f895"
+    },
+    "email": "xuweiweng2002@gmail.com",
+    "root": "/Users/xiaoyan/projects/CS336",
+    "host": "MacBook-Pro.local",
+    "username": null,
+    "executable": "/Users/xiaoyan/projects/CS336/assignment1-basics/.venv/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "cpu_freq": {
+        "current": 4,
+        "min": 0,
+        "max": 4
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4,
+            "min": 0,
+            "max": 4
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 494384795648,
+            "used": 11250503680
+        },
+        "/System/Volumes/Data": {
+            "total": 494384795648,
+            "used": 96632815616
+        }
+    },
+    "memory": {
+        "total": 17179869184
+    }
+}

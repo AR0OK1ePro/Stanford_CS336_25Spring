@@ -189,7 +189,6 @@ def train():
             if torch.cuda.is_available(): device = "cuda"
             elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available(): device = "mps"
             else: device = "cpu"
-        print(f"Using device: {device}")
         
         model_config = ModelConfig(
             d_model=config.d_model, num_heads=config.num_heads, d_ff=config.d_ff,
@@ -203,6 +202,7 @@ def train():
         log_interval = max_steps // config.log_num
         eval_interval = max_steps // config.eval_num
         save_interval = max_steps // config.save_num
+        print(f"Using device: {device}, max_steps: {max_steps}")
         
         training_config = TrainingConfig(
             batch_size=config.batch_size, learning_rate=config.learning_rate,
@@ -304,7 +304,7 @@ def main():
     parser.add_argument("--max_grad_norm", type=float, default=1.0)
     parser.add_argument("--optimizer", type=str, default="adamw")
     parser.add_argument("--lr_schedule", type=str, default="cosine")
-    parser.add_argument("--lr_warmup_ratio", type=float, default=0.1)
+    parser.add_argument("--lr_warmup_steps_ratio", type=float, default=0.1)
     parser.add_argument("--lr_decay_steps_ratio", type=float, default=1)
     parser.add_argument("--lr_min_ratio", type=float, default=0.1)
     parser.add_argument("--max_tokens", type=int, default=327680000)
