@@ -187,7 +187,13 @@ def train():
             if torch.cuda.is_available(): device = "cuda"
             elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available(): device = "mps"
             else: device = "cpu"
-        print(f"Using device: {device}")
+
+        if device == "cuda":
+            max_tokens = config.max_tokens_cuda
+        else:
+            max_tokens = config.max_tokens_no_cuda
+
+        print(f"Using device: {device}, max_tokens: {max_tokens}")
         
         model_config = ModelConfig(
             d_model=config.d_model, num_heads=config.num_heads, d_ff=config.d_ff,
@@ -195,12 +201,12 @@ def train():
             context_length=config.context_length, theta=config.theta, device=device, dtype=config.dtype
         )
         
-        max_steps = config.max_tokens // config.batch_size // config.context_length
+        max_steps = max_tokens // config.batch_size // config.context_length
         lr_warmup_steps = int(config.lr_warmup_steps_ratio * max_steps)
         lr_decay_steps = int(config.lr_decay_steps_ratio * max_steps)
-        log_interval = max_steps // config.log_num
-        eval_interval = max_steps // config.eval_num
-        save_interval = max_steps // config.save_num
+        log_interval = max(1, max_steps // config.log_num)
+        eval_interval = max(1, max_steps // config.eval_num)
+        save_interval = max(1, max_steps // config.save_num)
         
         training_config = TrainingConfig(
             batch_size=config.batch_size, learning_rate=config.learning_rate,
@@ -266,13 +272,20 @@ def train():
                 save_checkpoint(model, optimizer, step, checkpoint_path)
                 logger.log_info(f"Saved checkpoint: {checkpoint_path}")
         
-        final_checkpoint_path = checkpoint_dir / "final_checkpoint.pt"
-        save_checkpoint(model, optimizer, step, final_checkpoint_path)
-        logger.log_info(f"Training completed. Final checkpoint saved: {final_checkpoint_path}")
-        
+        elapsed = time.time() - start_time
+        train_metrics.update({
+            "elapsed_time": elapsed,
+            "tokens_per_second": (step * training_config.batch_size * model_config.context_length) / elapsed if elapsed > 0 else 0
+        })
+        logger.log_metrics(train_metrics, step)
+
         if val_dataset:
             val_metrics = evaluate_model(model, val_dataset, training_config, num_batches=50)
             logger.log_metrics(val_metrics, training_config.max_steps)
+
+        final_checkpoint_path = checkpoint_dir / "final_checkpoint.pt"
+        save_checkpoint(model, optimizer, step, final_checkpoint_path)
+        logger.log_info(f"Training completed. Final checkpoint saved: {final_checkpoint_path}")
         
         if config.single_minibatch and os.path.exists("data/single_minibatch.npy"):
             os.remove("data/single_minibatch.npy")
