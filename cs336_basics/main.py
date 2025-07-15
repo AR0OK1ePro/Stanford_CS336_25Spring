@@ -6,7 +6,6 @@ Supports configurable hyperparameters, efficient data loading, checkpointing, an
 
 import os
 import sys
-import argparse
 import time
 import math
 import numpy as np
@@ -94,8 +93,7 @@ class TrainingLogger:
     def log_metrics(self, metrics: dict[str, float], step: int):
         metric_str = " | ".join([f"{k}: {v:.6f}" for k, v in metrics.items()])
         self.logger.info(f"Step {step} | {metric_str}")
-        if wandb.run:
-            wandb.log(metrics, step=step)
+        wandb.log(metrics, step=step)
     
     def log_info(self, message: str):
         self.logger.info(message)
@@ -262,8 +260,6 @@ def train():
             if val_dataset and step > 0 and step % training_config.eval_interval == 0:
                 val_metrics = evaluate_model(model, val_dataset, training_config)
                 logger.log_metrics(val_metrics, step)
-                if val_metrics['val_loss'] < 1.45:
-                    break
             
             if step > 0 and step % training_config.save_interval == 0:
                 checkpoint_path = checkpoint_dir / f"checkpoint_{step}.pt"
@@ -271,7 +267,7 @@ def train():
                 logger.log_info(f"Saved checkpoint: {checkpoint_path}")
         
         final_checkpoint_path = checkpoint_dir / "final_checkpoint.pt"
-        save_checkpoint(model, optimizer, training_config.max_steps, final_checkpoint_path)
+        save_checkpoint(model, optimizer, step, final_checkpoint_path)
         logger.log_info(f"Training completed. Final checkpoint saved: {final_checkpoint_path}")
         
         if val_dataset:
@@ -281,62 +277,5 @@ def train():
         if config.single_minibatch and os.path.exists("data/single_minibatch.npy"):
             os.remove("data/single_minibatch.npy")
 
-def main():
-
-    parser = argparse.ArgumentParser(description="Train transformer language model", fromfile_prefix_chars='@')
-    # ModelConfig
-    parser.add_argument("--d_model", type=int, default=512)
-    parser.add_argument("--num_heads", type=int, default=8)
-    parser.add_argument("--d_ff", type=int, default=2048)
-    parser.add_argument("--vocab_size", type=int, default=50304)
-    parser.add_argument("--num_layers", type=int, default=6)
-    parser.add_argument("--context_length", type=int, default=1024)
-    parser.add_argument("--theta", type=float, default=10000.0)
-    parser.add_argument("--device", type=str, default="auto")
-    parser.add_argument("--dtype", type=str, default="float32")
-    # TrainingConfig
-    parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument("--learning_rate", type=float, default=3e-4)
-    parser.add_argument("--weight_decay", type=float, default=0.01)
-    parser.add_argument("--beta1", type=float, default=0.9)
-    parser.add_argument("--beta2", type=float, default=0.999)
-    parser.add_argument("--eps", type=float, default=1e-8)
-    parser.add_argument("--max_grad_norm", type=float, default=1.0)
-    parser.add_argument("--optimizer", type=str, default="adamw")
-    parser.add_argument("--lr_schedule", type=str, default="cosine")
-    parser.add_argument("--lr_warmup_ratio", type=float, default=0.1)
-    parser.add_argument("--lr_decay_steps_ratio", type=float, default=1)
-    parser.add_argument("--lr_min_ratio", type=float, default=0.1)
-    parser.add_argument("--max_tokens", type=int, default=327680000)
-    parser.add_argument("--log_num", type=int, default=2000)
-    parser.add_argument("--eval_num", type=int, default=2000)
-    parser.add_argument("--save_num", type=int, default=5)
-    parser.add_argument("--grad_accumulation_steps", type=int, default=1)
-    parser.add_argument("--checkpoint_dir", type=str, default="checkpoints")
-    # DataConfig
-    parser.add_argument("--train_data_path", type=str, default="train.bin")
-    parser.add_argument("--val_data_path", type=str, default="val.bin")
-    # General arguments
-    parser.add_argument("--wandb_project", type=str, default="CS336_assignment1", help="Wandb project name")
-    parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--single_minibatch", action="store_true", help="Overfit to a single minibatch")
-    parser.add_argument("--resume_from", type=str, default=None, help="Resume training from checkpoint")
-
-    args = parser.parse_args()
-
-    def args_to_sweep_parameters(args, sweep_overrides):
-        sweep_parameters = {k: {"value": v} for k, v in vars(args).items()}
-        sweep_parameters.update(sweep_overrides)
-        return sweep_parameters
-
-    sweep_config = {
-        'method': "grid",
-        'metric': {'name': 'val_loss', 'goal': 'minimize'},
-        'parameters': args_to_sweep_parameters(args, {"learning_rate": {"values": [1e-3, 3e-3, 5e-3, 1e-2]}})
-    }
-
-    sweep_id = wandb.sweep(sweep_config, project=args.wandb_project)
-    wandb.agent(sweep_id, function=train, count=10)
-
 if __name__ == "__main__":
-    main()
+    train()
