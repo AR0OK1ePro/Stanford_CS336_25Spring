@@ -53,8 +53,8 @@ if __name__ == "__main__":
     lm = transformer_lm(d_model=512, num_heads=16, d_ff=1344, vocab_size=10000, 
                         num_layers=4, context_length=256, theta=1000, device="mps", dtype=torch.float32)
 
-    lm.load_state_dict(torch.load("checkpoints/TinyStories_LM/lr_1e-1/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
     lm = torch.compile(lm, backend="aot_eager")
+    lm.load_state_dict(torch.load("checkpoints/TinyStories_LM/jolly-sweep-1/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
 
     prompt = "Once upon a time"
 
