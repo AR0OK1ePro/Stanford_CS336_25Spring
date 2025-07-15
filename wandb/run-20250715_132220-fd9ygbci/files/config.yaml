@@ -1,0 +1,124 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.13.4
+    cli_version: 0.19.9
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1752556940
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 2
+      - 14
+      - 23
+      - 37
+      4: 3.13.4
+      5: 0.19.9
+      8:
+      - 5
+      13: darwin-arm64
+batch_size:
+  desc: null
+  value: 64
+beta1:
+  desc: null
+  value: 0.9
+beta2:
+  desc: null
+  value: 0.999
+checkpoint_dir:
+  desc: null
+  value: checkpoints/TinyStories_LM
+context_length:
+  desc: null
+  value: 256
+d_ff:
+  desc: null
+  value: 1344
+d_model:
+  desc: null
+  value: 512
+device:
+  desc: null
+  value: auto
+dtype:
+  desc: null
+  value: float32
+eps:
+  desc: null
+  value: 1e-8
+eval_num:
+  desc: null
+  value: 2000
+grad_accumulation_steps:
+  desc: null
+  value: 1
+learning_rate:
+  desc: null
+  value: 0.003
+log_num:
+  desc: null
+  value: 2000
+lr_decay_steps_ratio:
+  desc: null
+  value: 1
+lr_min_ratio:
+  desc: null
+  value: 0.1
+lr_schedule:
+  desc: null
+  value: cosine
+lr_warmup_steps_ratio:
+  desc: null
+  value: 0.1
+max_grad_norm:
+  desc: null
+  value: 1
+max_tokens:
+  desc: null
+  value: 327680000
+num_heads:
+  desc: null
+  value: 16
+num_layers:
+  desc: null
+  value: 4
+optimizer:
+  desc: null
+  value: adamw
+resume_from:
+  desc: null
+  value: ''
+save_num:
+  desc: null
+  value: 5
+seed:
+  desc: null
+  value: 42
+single_minibatch:
+  desc: null
+  value: false
+theta:
+  desc: null
+  value: 10000
+train_data_path:
+  desc: null
+  value: data/TinyStoriesV2-GPT4-train.npy
+val_data_path:
+  desc: null
+  value: data/TinyStoriesV2-GPT4-valid.npy
+vocab_size:
+  desc: null
+  value: 10000
+weight_decay:
+  desc: null
+  value: 0.01
