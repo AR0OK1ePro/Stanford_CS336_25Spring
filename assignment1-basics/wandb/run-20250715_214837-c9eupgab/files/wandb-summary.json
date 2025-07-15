@@ -1,0 +1,1 @@
+{"train_loss": 1.9583988189697266, "learning_rate": 0.00030000034505108284, "step": 4881, "elapsed_time": 11448.055177927017, "tokens_per_second": 3492.746268125553, "_timestamp": 1752598780.877923, "_runtime": 11463.437894105911, "_step": 4882, "val_loss": 1.9110777926445008, "val_perplexity": 6.760371151694388, "_wandb": {"runtime": 11463}}

@@ -12,7 +12,7 @@ uv run cs336_basics/training_together.py \
   --dtype float32 \
   --batch_size 64 \
   --optimizer adamw \
-  --lr_warmup_ratio 0.1 \
+  --lr_warmup_steps_ratio 0.1 \
   --lr_decay_steps_ratio 1 \
   --max_tokens 327680000 \
   --log_num 2000 \
