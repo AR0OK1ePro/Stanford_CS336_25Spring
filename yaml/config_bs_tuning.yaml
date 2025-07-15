@@ -6,7 +6,7 @@ method: grid
 metric:
   goal: minimize
   name: val_loss
-  target: 1.45
+  target: 2.00
 parameters:
   d_model:
     value: 512
@@ -53,7 +53,7 @@ parameters:
   max_tokens_cuda:
     value: 327680000
   max_tokens_no_cuda:
-    value: 40000000
+    value: 40960000
   log_num:
     value: 2000
   eval_num:

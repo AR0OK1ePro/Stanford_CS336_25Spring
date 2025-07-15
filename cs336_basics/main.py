@@ -192,8 +192,6 @@ def train():
             max_tokens = config.max_tokens_cuda
         else:
             max_tokens = config.max_tokens_no_cuda
-
-        print(f"Using device: {device}, max_tokens: {max_tokens}")
         
         model_config = ModelConfig(
             d_model=config.d_model, num_heads=config.num_heads, d_ff=config.d_ff,
@@ -207,6 +205,8 @@ def train():
         log_interval = max(1, max_steps // config.log_num)
         eval_interval = max(1, max_steps // config.eval_num)
         save_interval = max(1, max_steps // config.save_num)
+
+        print(f"Using device: {device}, max_tokens: {max_tokens}, max_steps: {max_steps}")
         
         training_config = TrainingConfig(
             batch_size=config.batch_size, learning_rate=config.learning_rate,
