@@ -28,6 +28,8 @@ cd ..
 uv run wandb login
 
 # 8. 更新apt
-apt update
-apt  -y install tmux nvtop vim
-source $HOME/.local/bin/env
+# apt update
+# apt  -y install tmux nvtop vim
+# source $HOME/.local/bin/env
+
+chmod +x script/lr_tuning.sh

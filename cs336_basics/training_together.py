@@ -269,7 +269,7 @@ def train():
             if val_dataset and step > 0 and step % training_config.eval_interval == 0:
                 val_metrics = evaluate_model(model, val_dataset, training_config)
                 logger.log_metrics(val_metrics, step)
-                if val_metrics['value_loss'] < 1.45:
+                if val_metrics['val_loss'] < 1.45:
                     break
             
             if step > 0 and step % training_config.save_interval == 0:
