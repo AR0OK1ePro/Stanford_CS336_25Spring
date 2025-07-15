@@ -10,7 +10,7 @@ uv run cs336_basics/training_together.py \
   --theta 10000 \
   --device auto \
   --dtype float32 \
-  --batch_size 64 \
+  --learning_rate 3e-3 \
   --optimizer adamw \
   --lr_warmup_ratio 0.1 \
   --lr_decay_steps_ratio 1 \
@@ -21,3 +21,4 @@ uv run cs336_basics/training_together.py \
   --checkpoint_dir "checkpoints/TinyStories_LM" \
   --train_data_path "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data_path "data/TinyStoriesV2-GPT4-valid.npy" \
+  --wandb.project "CS336_assignment1"

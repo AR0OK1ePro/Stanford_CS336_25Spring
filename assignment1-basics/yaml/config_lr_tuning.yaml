@@ -1,0 +1,75 @@
+program: ./cs336_basics/main.py
+entity: "xuweiweng2002-nanyang-technological-university-singapore"
+project: "CS336_assignment1"
+name: "learning_rate_tuning"
+method: grid
+metric:
+  goal: minimize
+  name: val_loss
+  target: 1.45
+parameters:
+  d_model:
+    value: 512
+  num_heads:
+    value: 16
+  d_ff:
+    value: 1344
+  vocab_size:
+    value: 10000
+  num_layers:
+    value: 4
+  context_length:
+    value: 256
+  theta:
+    value: 10000
+  device:
+    value: auto
+  dtype:
+    value: float32
+  batch_size:
+    value: 64
+  learning_rate:
+    values: [0.001, 0.003, 0.005, 0.01, 0.03, 0.05]
+  weight_decay:
+    value: 0.01
+  beta1:
+    value: 0.9
+  beta2:
+    value: 0.999
+  eps:
+    value: !!float 1e-8
+  max_grad_norm:
+    value: 1.0
+  optimizer:
+    value: adamw
+  lr_schedule:
+    value: cosine
+  lr_warmup_steps_ratio:
+    value: 0.1
+  lr_decay_steps_ratio:
+    value: 1
+  lr_min_ratio:
+    value: 0.1
+  max_tokens:
+    value: 327680000
+  log_num:
+    value: 2000
+  eval_num:
+    value: 2000
+  save_num:
+    value: 5
+  grad_accumulation_steps:
+    value: 1
+  checkpoint_dir:
+    value: "checkpoints/TinyStories_LM"
+  train_data_path:
+    value: "data/TinyStoriesV2-GPT4-train.npy"
+  val_data_path:
+    value: "data/TinyStoriesV2-GPT4-valid.npy"
+  seed:
+    value: 42
+  resume_from:
+    value: ""
+  single_minibatch:
+    value: false
+run_cap: 6
