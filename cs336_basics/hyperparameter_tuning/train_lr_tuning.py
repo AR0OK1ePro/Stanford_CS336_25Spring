@@ -262,21 +262,26 @@ def train():
             if val_dataset and step > 0 and step % training_config.eval_interval == 0:
                 val_metrics = evaluate_model(model, val_dataset, training_config)
                 logger.log_metrics(val_metrics, step)
-                if val_metrics['val_loss'] < 1.45:
-                    break
             
             if step > 0 and step % training_config.save_interval == 0:
                 checkpoint_path = checkpoint_dir / f"checkpoint_{step}.pt"
                 save_checkpoint(model, optimizer, step, checkpoint_path)
                 logger.log_info(f"Saved checkpoint: {checkpoint_path}")
         
-        final_checkpoint_path = checkpoint_dir / "final_checkpoint.pt"
-        save_checkpoint(model, optimizer, training_config.max_steps, final_checkpoint_path)
-        logger.log_info(f"Training completed. Final checkpoint saved: {final_checkpoint_path}")
+        elapsed = time.time() - start_time
+        train_metrics.update({
+            "elapsed_time": elapsed,
+            "tokens_per_second": (step * training_config.batch_size * model_config.context_length) / elapsed if elapsed > 0 else 0
+        })
+        logger.log_metrics(train_metrics, step)
         
         if val_dataset:
             val_metrics = evaluate_model(model, val_dataset, training_config, num_batches=50)
             logger.log_metrics(val_metrics, training_config.max_steps)
+
+        final_checkpoint_path = checkpoint_dir / "final_checkpoint.pt"
+        save_checkpoint(model, optimizer, training_config.max_steps, final_checkpoint_path)
+        logger.log_info(f"Training completed. Final checkpoint saved: {final_checkpoint_path}")
         
         if config.single_minibatch and os.path.exists("data/single_minibatch.npy"):
             os.remove("data/single_minibatch.npy")
@@ -317,7 +322,7 @@ def main():
     parser.add_argument("--train_data_path", type=str, default="train.bin")
     parser.add_argument("--val_data_path", type=str, default="val.bin")
     # General arguments
-    parser.add_argument("--wandb_project", type=str, default="CS336_assignment1", help="Wandb project name")
+    parser.add_argument("--wandb_project", type=str, default="CS336_assignment1_hyperparameter_tuning", help="Wandb project name")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--single_minibatch", action="store_true", help="Overfit to a single minibatch")
     parser.add_argument("--resume_from", type=str, default=None, help="Resume training from checkpoint")

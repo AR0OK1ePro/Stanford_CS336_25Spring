@@ -1,4 +1,4 @@
-program: ./cs336_basics/main.py
+program: ./wandb_sweep_agent/main.py
 entity: "xuweiweng2002-nanyang-technological-university-singapore"
 project: "CS336_assignment1"
 name: "learning_rate_tuning"
@@ -27,7 +27,7 @@ parameters:
   dtype:
     value: float32
   batch_size:
-    value: 32
+    value: 64
   learning_rate:
     values: [0.001, 0.003, 0.005, 0.01, 0.03, 0.05]
   weight_decay:
