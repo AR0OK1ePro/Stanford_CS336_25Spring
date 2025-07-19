@@ -1,6 +1,6 @@
 #!/bin/bash
 
-uv run cs336_basics/training_together.py \
+uv run cs336_basics/hyperparameter_tuning/train_bs_tuning.py \
   --d_model 512 \
   --num_heads 16 \
   --d_ff 1344 \
@@ -10,9 +10,9 @@ uv run cs336_basics/training_together.py \
   --theta 10000 \
   --device auto \
   --dtype float32 \
-  --learning_rate 3e-3 \
+  --learning_rate 5e-3 \
   --optimizer adamw \
-  --lr_warmup_ratio 0.1 \
+  --lr_warmup_steps_ratio 0.1 \
   --lr_decay_steps_ratio 1 \
   --max_tokens 327680000 \
   --log_num 2000 \
@@ -21,4 +21,4 @@ uv run cs336_basics/training_together.py \
   --checkpoint_dir "checkpoints/TinyStories_LM" \
   --train_data_path "data/TinyStoriesV2-GPT4-train.npy" \
   --val_data_path "data/TinyStoriesV2-GPT4-valid.npy" \
-  --wandb.project "CS336_assignment1"
+  --wandb_project "CS336_assignment1_hyperparameter_tuning"

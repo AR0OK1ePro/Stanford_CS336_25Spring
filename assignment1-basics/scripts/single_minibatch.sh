@@ -1,6 +1,6 @@
 #!/bin/bash
 
-uv run cs336_basics/training_together.py \
+uv run cs336_basics/train.py \
   --d_model 128 \
   --num_heads 4 \
   --d_ff 320 \
