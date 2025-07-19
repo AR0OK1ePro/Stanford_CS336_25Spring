@@ -46,15 +46,15 @@ def decoding(tokenizer: Tokenizer, lm: transformer_lm, prompt: str,
 
 
 if __name__ == "__main__":
-    tinystories_read_path = os.path.join("tokenizers", "tokenizer_readable-TinyStories_train-v10000.pkl")
+    tinystories_read_path = os.path.join("tokenizers", "tokenizer_readable-owt_train-v32000.pkl")
     tinystories_tokenizer = Tokenizer(vocab={}, merges=[])
     tinystories_tokenizer.from_file(tinystories_read_path, special_tokens=["<|endoftext|>"])
 
-    lm = transformer_lm(d_model=512, num_heads=16, d_ff=1344, vocab_size=10000, 
+    lm = transformer_lm(d_model=512, num_heads=16, d_ff=1344, vocab_size=32000, 
                         num_layers=4, context_length=256, theta=1000, device="mps", dtype=torch.float32)
 
     lm = torch.compile(lm, backend="aot_eager")
-    lm.load_state_dict(torch.load("checkpoints/TinyStories_LM/jolly-sweep-1/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
+    lm.load_state_dict(torch.load("checkpoints/OpenWebText_LM/final_checkpoint.pt", map_location=torch.device('mps'))["model"])
 
     prompt = "Once upon a time"
 

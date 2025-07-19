@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e  # 一旦出现错误就终止脚本
+# set -e  # 一旦出现错误就终止脚本
 
 # 1. 安装 uv 包管理器
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -16,8 +16,8 @@ mkdir -p data
 cd data
 
 # 5. 下载数据文件
-# wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/owt_train.npy
-# wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/owt_valid.npy
+wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/owt_train.npy
+wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/owt_valid.npy
 wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/TinyStoriesV2-GPT4-train.npy
 wget https://huggingface.co/datasets/irelandoldpig/Stanford_CS336_25Spring_Data/resolve/main/TinyStoriesV2-GPT4-valid.npy
 
@@ -32,4 +32,4 @@ uv run wandb login
 # apt  -y install tmux nvtop vim
 # source $HOME/.local/bin/env
 
-chmod +x script/lr_tuning.sh
+chmod +x script/*.sh
