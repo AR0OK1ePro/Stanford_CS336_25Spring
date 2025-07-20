@@ -1,0 +1,90 @@
+{
+  "os":  "macOS-15.5-arm64-arm-64bit-Mach-O",
+  "python":  "CPython 3.13.4",
+  "startedAt":  "2025-07-19T05:36:42.211838Z",
+  "args":  [
+    "--d_model",
+    "512",
+    "--num_heads",
+    "16",
+    "--d_ff",
+    "1344",
+    "--vocab_size",
+    "10000",
+    "--num_layers",
+    "4",
+    "--context_length",
+    "256",
+    "--theta",
+    "10000",
+    "--device",
+    "auto",
+    "--dtype",
+    "float32",
+    "--batch_size",
+    "64",
+    "--learning_rate",
+    "5e-3",
+    "--optimizer",
+    "adamw",
+    "--lr_warmup_steps_ratio",
+    "0.1",
+    "--lr_decay_steps_ratio",
+    "1",
+    "--max_tokens",
+    "327680000",
+    "--log_num",
+    "2000",
+    "--eval_num",
+    "2000",
+    "--save_num",
+    "5",
+    "--checkpoint_dir",
+    "checkpoints/TinyStories_LM",
+    "--train_data_path",
+    "data/TinyStoriesV2-GPT4-train.npy",
+    "--val_data_path",
+    "data/TinyStoriesV2-GPT4-valid.npy",
+    "--wandb_project",
+    "CS336_ablation"
+  ],
+  "program":  "/Users/xiaoyan/projects/CS336/assignment1-basics/cs336_basics/ablation_experiments/train_ablation.py",
+  "codePath":  "assignment1-basics/cs336_basics/ablation_experiments/train_ablation.py",
+  "git":  {
+    "remote":  "https://github.com/AR0OK1ePro/Stanford_CS336_25Spring.git",
+    "commit":  "10a393951d19f8e3d36c3afef353e07ecfabe73f"
+  },
+  "email":  "xuweiweng2002@gmail.com",
+  "root":  "/Users/xiaoyan/projects/CS336/assignment1-basics",
+  "host":  "MacBook-Pro.local",
+  "executable":  "/Users/xiaoyan/projects/CS336/assignment1-basics/.venv/bin/python3",
+  "codePathLocal":  "cs336_basics/ablation_experiments/train_ablation.py",
+  "cpu_count":  10,
+  "cpu_count_logical":  10,
+  "disk":  {
+    "/":  {
+      "total":  "494384795648",
+      "used":  "123469221888"
+    },
+    "/System/Volumes/Data":  {
+      "total":  "494384795648",
+      "used":  "123469221888"
+    }
+  },
+  "memory":  {
+    "total":  "17179869184"
+  },
+  "cpu":  {
+    "count":  10,
+    "countLogical":  10
+  },
+  "apple":  {
+    "name":  "Apple M4",
+    "ecpuCores":  6,
+    "pcpuCores":  4,
+    "gpuCores":  10,
+    "memoryGb":  16,
+    "swapTotalBytes":  "3221225472",
+    "ramTotalBytes":  "17179869184"
+  }
+}
